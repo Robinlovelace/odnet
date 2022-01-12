@@ -1,0 +1,4500 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2051833,
+            55.9383829
+          ],
+          [
+            -3.216337,
+            55.9317673
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 41.0,
+        "bicycle": 1.0,
+        "bus": 1.5,
+        "car_driver": 3.0,
+        "car_passenger": 0.0,
+        "foot": 35.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001616",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2066577,
+            55.932347
+          ],
+          [
+            -3.204684,
+            55.9393031
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 41.0,
+        "bicycle": 1.0,
+        "bus": 1.5,
+        "car_driver": 3.0,
+        "car_passenger": 0.0,
+        "foot": 35.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001616",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2177795,
+            55.9313919
+          ],
+          [
+            -3.207122,
+            55.9438242
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.0,
+        "bicycle": 2.75,
+        "bus": 10.5,
+        "car_driver": 6.5,
+        "car_passenger": 0.75,
+        "foot": 26.25,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001620",
+        "other": 0.25,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2097663,
+            55.93212
+          ],
+          [
+            -3.2070075,
+            55.945746
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.0,
+        "bicycle": 2.75,
+        "bus": 10.5,
+        "car_driver": 6.5,
+        "car_passenger": 0.75,
+        "foot": 26.25,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001620",
+        "other": 0.25,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2100164,
+            55.9321019
+          ],
+          [
+            -3.2048594,
+            55.9447569
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.0,
+        "bicycle": 2.75,
+        "bus": 10.5,
+        "car_driver": 6.5,
+        "car_passenger": 0.75,
+        "foot": 26.25,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001620",
+        "other": 0.25,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2240681,
+            55.9260058
+          ],
+          [
+            -3.2036336,
+            55.9438494
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.0,
+        "bicycle": 2.75,
+        "bus": 10.5,
+        "car_driver": 6.5,
+        "car_passenger": 0.75,
+        "foot": 26.25,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001620",
+        "other": 0.25,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2051408,
+            55.9342493
+          ],
+          [
+            -3.1897578,
+            55.9455874
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 49.5,
+        "bicycle": 7.5,
+        "bus": 6.5,
+        "car_driver": 3.5,
+        "car_passenger": 1.5,
+        "foot": 30.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2055151,
+            55.9342447
+          ],
+          [
+            -3.1964881,
+            55.9448916
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 49.5,
+        "bicycle": 7.5,
+        "bus": 6.5,
+        "car_driver": 3.5,
+        "car_passenger": 1.5,
+        "foot": 30.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2238024,
+            55.9298211
+          ],
+          [
+            -3.191258,
+            55.9468343
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.6,
+        "bicycle": 7.6,
+        "bus": 18.4,
+        "car_driver": 4.6,
+        "car_passenger": 0.4,
+        "foot": 14.2,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001622",
+        "other": 0.2,
+        "train": 0.2
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2052738,
+            55.9330874
+          ],
+          [
+            -3.2002986,
+            55.9530644
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.6,
+        "bicycle": 7.6,
+        "bus": 18.4,
+        "car_driver": 4.6,
+        "car_passenger": 0.4,
+        "foot": 14.2,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001622",
+        "other": 0.2,
+        "train": 0.2
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2101285,
+            55.9341534
+          ],
+          [
+            -3.1837463,
+            55.9491646
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.6,
+        "bicycle": 7.6,
+        "bus": 18.4,
+        "car_driver": 4.6,
+        "car_passenger": 0.4,
+        "foot": 14.2,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001622",
+        "other": 0.2,
+        "train": 0.2
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2239482,
+            55.9261615
+          ],
+          [
+            -3.1906443,
+            55.9509889
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.6,
+        "bicycle": 7.6,
+        "bus": 18.4,
+        "car_driver": 4.6,
+        "car_passenger": 0.4,
+        "foot": 14.2,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001622",
+        "other": 0.2,
+        "train": 0.2
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2239641,
+            55.9299182
+          ],
+          [
+            -3.1885453,
+            55.9464695
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.6,
+        "bicycle": 7.6,
+        "bus": 18.4,
+        "car_driver": 4.6,
+        "car_passenger": 0.4,
+        "foot": 14.2,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001622",
+        "other": 0.2,
+        "train": 0.2
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2051964,
+            55.9326104
+          ],
+          [
+            -3.1744216,
+            55.9533782
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 31.0,
+        "bicycle": 14.0,
+        "bus": 8.0,
+        "car_driver": 0.0,
+        "car_passenger": 0.0,
+        "foot": 8.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001623",
+        "other": 1.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2082801,
+            55.9364048
+          ],
+          [
+            -3.2093323,
+            55.9529877
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 28.0,
+        "bicycle": 3.5,
+        "bus": 11.5,
+        "car_driver": 2.5,
+        "car_passenger": 0.5,
+        "foot": 10.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2115898,
+            55.9335974
+          ],
+          [
+            -3.2124584,
+            55.9521351
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 28.0,
+        "bicycle": 3.5,
+        "bus": 11.5,
+        "car_driver": 2.5,
+        "car_passenger": 0.5,
+        "foot": 10.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2099185,
+            55.9310695
+          ],
+          [
+            -3.2069782,
+            55.9525222
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.666666666666664,
+        "bicycle": 1.6666666666666667,
+        "bus": 13.666666666666666,
+        "car_driver": 6.0,
+        "car_passenger": 0.6666666666666666,
+        "foot": 19.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001660",
+        "other": 1.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2238122,
+            55.9275969
+          ],
+          [
+            -3.2168164,
+            55.9461317
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.666666666666664,
+        "bicycle": 1.6666666666666667,
+        "bus": 13.666666666666666,
+        "car_driver": 6.0,
+        "car_passenger": 0.6666666666666666,
+        "foot": 19.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001660",
+        "other": 1.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2124718,
+            55.9332531
+          ],
+          [
+            -3.2178439,
+            55.945871
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.666666666666664,
+        "bicycle": 1.6666666666666667,
+        "bus": 13.666666666666666,
+        "car_driver": 6.0,
+        "car_passenger": 0.6666666666666666,
+        "foot": 19.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001616",
+        "geo_code2": "S02001660",
+        "other": 1.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2059424,
+            55.9445489
+          ],
+          [
+            -3.2053665,
+            55.9324655
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 35.5,
+        "bicycle": 3.0,
+        "bus": 7.5,
+        "car_driver": 1.0,
+        "car_passenger": 0.5,
+        "foot": 23.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001616",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2034721,
+            55.9423084
+          ],
+          [
+            -3.2138539,
+            55.9327136
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 35.5,
+        "bicycle": 3.0,
+        "bus": 7.5,
+        "car_driver": 1.0,
+        "car_passenger": 0.5,
+        "foot": 23.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001616",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2054201,
+            55.9433239
+          ],
+          [
+            -3.2130593,
+            55.9461332
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 0.42857142857142855,
+        "bus": 1.1428571428571428,
+        "car_driver": 1.1428571428571428,
+        "car_passenger": 0.2857142857142857,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001620",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2065707,
+            55.9487921
+          ],
+          [
+            -3.2067576,
+            55.9492854
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 0.42857142857142855,
+        "bus": 1.1428571428571428,
+        "car_driver": 1.1428571428571428,
+        "car_passenger": 0.2857142857142857,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001620",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2082992,
+            55.9477789
+          ],
+          [
+            -3.2060821,
+            55.9445427
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 0.42857142857142855,
+        "bus": 1.1428571428571428,
+        "car_driver": 1.1428571428571428,
+        "car_passenger": 0.2857142857142857,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001620",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2062466,
+            55.9476986
+          ],
+          [
+            -3.2002818,
+            55.9463149
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 0.42857142857142855,
+        "bus": 1.1428571428571428,
+        "car_driver": 1.1428571428571428,
+        "car_passenger": 0.2857142857142857,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001620",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.203342,
+            55.9460323
+          ],
+          [
+            -3.2112153,
+            55.9460841
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 0.42857142857142855,
+        "bus": 1.1428571428571428,
+        "car_driver": 1.1428571428571428,
+        "car_passenger": 0.2857142857142857,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001620",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2058729,
+            55.9470579
+          ],
+          [
+            -3.207131,
+            55.9479548
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 0.42857142857142855,
+        "bus": 1.1428571428571428,
+        "car_driver": 1.1428571428571428,
+        "car_passenger": 0.2857142857142857,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001620",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2037479,
+            55.9458199
+          ],
+          [
+            -3.2063372,
+            55.9479785
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 0.42857142857142855,
+        "bus": 1.1428571428571428,
+        "car_driver": 1.1428571428571428,
+        "car_passenger": 0.2857142857142857,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001620",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2091788,
+            55.9432461
+          ],
+          [
+            -3.2006549,
+            55.9421412
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 39.0,
+        "bicycle": 2.75,
+        "bus": 1.75,
+        "car_driver": 0.75,
+        "car_passenger": 0.25,
+        "foot": 33.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1987513,
+            55.9465147
+          ],
+          [
+            -3.1986889,
+            55.9449221
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 39.0,
+        "bicycle": 2.75,
+        "bus": 1.75,
+        "car_driver": 0.75,
+        "car_passenger": 0.25,
+        "foot": 33.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2050551,
+            55.9448017
+          ],
+          [
+            -3.1794858,
+            55.9429593
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 39.0,
+        "bicycle": 2.75,
+        "bus": 1.75,
+        "car_driver": 0.75,
+        "car_passenger": 0.25,
+        "foot": 33.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2110457,
+            55.9460819
+          ],
+          [
+            -3.1984526,
+            55.944907
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 39.0,
+        "bicycle": 2.75,
+        "bus": 1.75,
+        "car_driver": 0.75,
+        "car_passenger": 0.25,
+        "foot": 33.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2150026,
+            55.9469981
+          ],
+          [
+            -3.1881637,
+            55.95657
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 2.142857142857143,
+        "bus": 6.285714285714286,
+        "car_driver": 0.8571428571428571,
+        "car_passenger": 0.0,
+        "foot": 36.714285714285715,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001622",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2034126,
+            55.9435933
+          ],
+          [
+            -3.1873822,
+            55.9497967
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 2.142857142857143,
+        "bus": 6.285714285714286,
+        "car_driver": 0.8571428571428571,
+        "car_passenger": 0.0,
+        "foot": 36.714285714285715,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001622",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2037899,
+            55.9438168
+          ],
+          [
+            -3.1965969,
+            55.9520936
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 2.142857142857143,
+        "bus": 6.285714285714286,
+        "car_driver": 0.8571428571428571,
+        "car_passenger": 0.0,
+        "foot": 36.714285714285715,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001622",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2035955,
+            55.942732
+          ],
+          [
+            -3.1939213,
+            55.9536381
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 2.142857142857143,
+        "bus": 6.285714285714286,
+        "car_driver": 0.8571428571428571,
+        "car_passenger": 0.0,
+        "foot": 36.714285714285715,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001622",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.206961,
+            55.9478623
+          ],
+          [
+            -3.1947065,
+            55.9486835
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 2.142857142857143,
+        "bus": 6.285714285714286,
+        "car_driver": 0.8571428571428571,
+        "car_passenger": 0.0,
+        "foot": 36.714285714285715,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001622",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2033047,
+            55.9437038
+          ],
+          [
+            -3.1828559,
+            55.9508084
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 2.142857142857143,
+        "bus": 6.285714285714286,
+        "car_driver": 0.8571428571428571,
+        "car_passenger": 0.0,
+        "foot": 36.714285714285715,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001622",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2055114,
+            55.9458186
+          ],
+          [
+            -3.1880891,
+            55.9465576
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.285714285714285,
+        "bicycle": 2.142857142857143,
+        "bus": 6.285714285714286,
+        "car_driver": 0.8571428571428571,
+        "car_passenger": 0.0,
+        "foot": 36.714285714285715,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001622",
+        "other": 0.14285714285714285,
+        "train": 0.14285714285714285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2032493,
+            55.9439285
+          ],
+          [
+            -3.1745458,
+            55.9526479
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 30.5,
+        "bicycle": 2.5,
+        "bus": 2.5,
+        "car_driver": 1.0,
+        "car_passenger": 0.0,
+        "foot": 23.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001623",
+        "other": 1.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2063419,
+            55.9441144
+          ],
+          [
+            -3.1742483,
+            55.9496874
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 30.5,
+        "bicycle": 2.5,
+        "bus": 2.5,
+        "car_driver": 1.0,
+        "car_passenger": 0.0,
+        "foot": 23.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001623",
+        "other": 1.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2036339,
+            55.9419477
+          ],
+          [
+            -3.2004137,
+            55.9545508
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 30.5,
+        "bicycle": 1.5,
+        "bus": 3.5,
+        "car_driver": 0.0,
+        "car_passenger": 0.5,
+        "foot": 25.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2142297,
+            55.9461523
+          ],
+          [
+            -3.1945146,
+            55.9555425
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 30.5,
+        "bicycle": 1.5,
+        "bus": 3.5,
+        "car_driver": 0.0,
+        "car_passenger": 0.5,
+        "foot": 25.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2026742,
+            55.9466017
+          ],
+          [
+            -3.219153,
+            55.9458862
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.333333333333336,
+        "bicycle": 0.6666666666666666,
+        "bus": 4.333333333333333,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.0,
+        "foot": 36.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001660",
+        "other": 0.6666666666666666,
+        "train": 0.6666666666666666
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2034776,
+            55.9419788
+          ],
+          [
+            -3.2350715,
+            55.9456938
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.333333333333336,
+        "bicycle": 0.6666666666666666,
+        "bus": 4.333333333333333,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.0,
+        "foot": 36.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001660",
+        "other": 0.6666666666666666,
+        "train": 0.6666666666666666
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2090297,
+            55.9410876
+          ],
+          [
+            -3.2206168,
+            55.9459143
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.333333333333336,
+        "bicycle": 0.6666666666666666,
+        "bus": 4.333333333333333,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.0,
+        "foot": 36.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001620",
+        "geo_code2": "S02001660",
+        "other": 0.6666666666666666,
+        "train": 0.6666666666666666
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1947513,
+            55.9403516
+          ],
+          [
+            -3.2061441,
+            55.9376369
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 40.0,
+        "bicycle": 6.0,
+        "bus": 10.0,
+        "car_driver": 4.0,
+        "car_passenger": 0.0,
+        "foot": 20.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001616",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1899331,
+            55.9455658
+          ],
+          [
+            -3.2023686,
+            55.9433067
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 37.75,
+        "bicycle": 1.75,
+        "bus": 1.75,
+        "car_driver": 0.5,
+        "car_passenger": 0.0,
+        "foot": 33.25,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001620",
+        "other": 0.5,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1809499,
+            55.9408721
+          ],
+          [
+            -3.2077027,
+            55.9435738
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 37.75,
+        "bicycle": 1.75,
+        "bus": 1.75,
+        "car_driver": 0.5,
+        "car_passenger": 0.0,
+        "foot": 33.25,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001620",
+        "other": 0.5,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1862862,
+            55.9447015
+          ],
+          [
+            -3.2061893,
+            55.9475598
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 37.75,
+        "bicycle": 1.75,
+        "bus": 1.75,
+        "car_driver": 0.5,
+        "car_passenger": 0.0,
+        "foot": 33.25,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001620",
+        "other": 0.5,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1828119,
+            55.9408325
+          ],
+          [
+            -3.2112153,
+            55.9460841
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 37.75,
+        "bicycle": 1.75,
+        "bus": 1.75,
+        "car_driver": 0.5,
+        "car_passenger": 0.0,
+        "foot": 33.25,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001620",
+        "other": 0.5,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1833861,
+            55.9434471
+          ],
+          [
+            -3.1833585,
+            55.9434059
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.75,
+        "bicycle": 2.0,
+        "bus": 1.0,
+        "car_driver": 1.25,
+        "car_passenger": 0.5,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2000401,
+            55.9447443
+          ],
+          [
+            -3.1893117,
+            55.94577
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.75,
+        "bicycle": 2.0,
+        "bus": 1.0,
+        "car_driver": 1.25,
+        "car_passenger": 0.5,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1953018,
+            55.94043
+          ],
+          [
+            -3.2035545,
+            55.9408248
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.75,
+        "bicycle": 2.0,
+        "bus": 1.0,
+        "car_driver": 1.25,
+        "car_passenger": 0.5,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1900453,
+            55.9455357
+          ],
+          [
+            -3.1982779,
+            55.9448944
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.75,
+        "bicycle": 2.0,
+        "bus": 1.0,
+        "car_driver": 1.25,
+        "car_passenger": 0.5,
+        "foot": 43.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.201106,
+            55.9424785
+          ],
+          [
+            -3.1849253,
+            55.9575641
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.5,
+        "bicycle": 2.875,
+        "bus": 4.5,
+        "car_driver": 1.125,
+        "car_passenger": 0.25,
+        "foot": 35.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001622",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2000401,
+            55.9447443
+          ],
+          [
+            -3.1941683,
+            55.9541114
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.5,
+        "bicycle": 2.875,
+        "bus": 4.5,
+        "car_driver": 1.125,
+        "car_passenger": 0.25,
+        "foot": 35.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001622",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.180196,
+            55.9399488
+          ],
+          [
+            -3.1907078,
+            55.9562421
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.5,
+        "bicycle": 2.875,
+        "bus": 4.5,
+        "car_driver": 1.125,
+        "car_passenger": 0.25,
+        "foot": 35.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001622",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2034812,
+            55.94131
+          ],
+          [
+            -3.1875199,
+            55.9566765
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.5,
+        "bicycle": 2.875,
+        "bus": 4.5,
+        "car_driver": 1.125,
+        "car_passenger": 0.25,
+        "foot": 35.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001622",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1909137,
+            55.945353
+          ],
+          [
+            -3.1906543,
+            55.9561397
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.5,
+        "bicycle": 2.875,
+        "bus": 4.5,
+        "car_driver": 1.125,
+        "car_passenger": 0.25,
+        "foot": 35.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001622",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1862862,
+            55.9447015
+          ],
+          [
+            -3.1853279,
+            55.9504669
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.5,
+        "bicycle": 2.875,
+        "bus": 4.5,
+        "car_driver": 1.125,
+        "car_passenger": 0.25,
+        "foot": 35.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001622",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.194251,
+            55.9449691
+          ],
+          [
+            -3.1872939,
+            55.948674
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.5,
+        "bicycle": 2.875,
+        "bus": 4.5,
+        "car_driver": 1.125,
+        "car_passenger": 0.25,
+        "foot": 35.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001622",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1997656,
+            55.9414885
+          ],
+          [
+            -3.185759,
+            55.9467248
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.5,
+        "bicycle": 2.875,
+        "bus": 4.5,
+        "car_driver": 1.125,
+        "car_passenger": 0.25,
+        "foot": 35.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001622",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1990813,
+            55.9449331
+          ],
+          [
+            -3.1704703,
+            55.941866
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 25.5,
+        "bicycle": 3.0,
+        "bus": 0.5,
+        "car_driver": 0.0,
+        "car_passenger": 0.0,
+        "foot": 22.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001623",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2006549,
+            55.9421412
+          ],
+          [
+            -3.1702214,
+            55.941618
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 25.5,
+        "bicycle": 3.0,
+        "bus": 0.5,
+        "car_driver": 0.0,
+        "car_passenger": 0.0,
+        "foot": 22.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001623",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1809499,
+            55.9408721
+          ],
+          [
+            -3.2005145,
+            55.9530528
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 34.0,
+        "bicycle": 1.0,
+        "bus": 13.0,
+        "car_driver": 2.0,
+        "car_passenger": 0.0,
+        "foot": 17.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1787523,
+            55.9382056
+          ],
+          [
+            -3.2137189,
+            55.9523103
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 33.666666666666664,
+        "bicycle": 2.6666666666666665,
+        "bus": 7.666666666666667,
+        "car_driver": 2.3333333333333335,
+        "car_passenger": 0.0,
+        "foot": 20.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001660",
+        "other": 0.3333333333333333,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2035762,
+            55.9407865
+          ],
+          [
+            -3.224147,
+            55.9503994
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 33.666666666666664,
+        "bicycle": 2.6666666666666665,
+        "bus": 7.666666666666667,
+        "car_driver": 2.3333333333333335,
+        "car_passenger": 0.0,
+        "foot": 20.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001660",
+        "other": 0.3333333333333333,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1979179,
+            55.9448848
+          ],
+          [
+            -3.2225272,
+            55.950802
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 33.666666666666664,
+        "bicycle": 2.6666666666666665,
+        "bus": 7.666666666666667,
+        "car_driver": 2.3333333333333335,
+        "car_passenger": 0.0,
+        "foot": 20.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001621",
+        "geo_code2": "S02001660",
+        "other": 0.3333333333333333,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1921091,
+            55.9474117
+          ],
+          [
+            -3.2052897,
+            55.9332056
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 23.0,
+        "bicycle": 2.0,
+        "bus": 7.0,
+        "car_driver": 3.0,
+        "car_passenger": 3.0,
+        "foot": 7.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001616",
+        "other": 1.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1920192,
+            55.9523409
+          ],
+          [
+            -3.2037899,
+            55.9438168
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 36.333333333333336,
+        "bicycle": 0.6666666666666666,
+        "bus": 2.0,
+        "car_driver": 1.3333333333333333,
+        "car_passenger": 0.0,
+        "foot": 32.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001620",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1974417,
+            55.9534804
+          ],
+          [
+            -3.2030255,
+            55.9439584
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 36.333333333333336,
+        "bicycle": 0.6666666666666666,
+        "bus": 2.0,
+        "car_driver": 1.3333333333333333,
+        "car_passenger": 0.0,
+        "foot": 32.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001620",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1920192,
+            55.9523409
+          ],
+          [
+            -3.2061102,
+            55.9475168
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 36.333333333333336,
+        "bicycle": 0.6666666666666666,
+        "bus": 2.0,
+        "car_driver": 1.3333333333333333,
+        "car_passenger": 0.0,
+        "foot": 32.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001620",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1922215,
+            55.9527304
+          ],
+          [
+            -3.2035223,
+            55.9409179
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.666666666666664,
+        "bicycle": 0.3333333333333333,
+        "bus": 4.0,
+        "car_driver": 1.0,
+        "car_passenger": 0.0,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1893366,
+            55.9532288
+          ],
+          [
+            -3.1835257,
+            55.9438013
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.666666666666664,
+        "bicycle": 0.3333333333333333,
+        "bus": 4.0,
+        "car_driver": 1.0,
+        "car_passenger": 0.0,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1877865,
+            55.9567164
+          ],
+          [
+            -3.2013519,
+            55.9426685
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 44.666666666666664,
+        "bicycle": 0.3333333333333333,
+        "bus": 4.0,
+        "car_driver": 1.0,
+        "car_passenger": 0.0,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1933886,
+            55.9526177
+          ],
+          [
+            -3.1846551,
+            55.9511967
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1870971,
+            55.9536859
+          ],
+          [
+            -3.1879248,
+            55.9541098
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.195321,
+            55.9475417
+          ],
+          [
+            -3.1867624,
+            55.9557768
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.186056,
+            55.9471886
+          ],
+          [
+            -3.1998262,
+            55.9464028
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1940553,
+            55.9538894
+          ],
+          [
+            -3.1873301,
+            55.9512769
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1890628,
+            55.9532762
+          ],
+          [
+            -3.1832287,
+            55.9492365
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1971627,
+            55.9534222
+          ],
+          [
+            -3.1890196,
+            55.9459971
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.200275,
+            55.9530532
+          ],
+          [
+            -3.1916343,
+            55.9482561
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1967296,
+            55.9536752
+          ],
+          [
+            -3.1870785,
+            55.9547728
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.111111111111114,
+        "bicycle": 0.6666666666666666,
+        "bus": 1.8888888888888888,
+        "car_driver": 1.1111111111111112,
+        "car_passenger": 0.4444444444444444,
+        "foot": 42.55555555555556,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001622",
+        "other": 1.1111111111111112,
+        "train": 0.3333333333333333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1896907,
+            55.9511094
+          ],
+          [
+            -3.174456,
+            55.9526785
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 32.0,
+        "bicycle": 1.0,
+        "bus": 1.0,
+        "car_driver": 0.5,
+        "car_passenger": 0.0,
+        "foot": 29.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001623",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1914235,
+            55.9511316
+          ],
+          [
+            -3.1814029,
+            55.9510584
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 32.0,
+        "bicycle": 1.0,
+        "bus": 1.0,
+        "car_driver": 0.5,
+        "car_passenger": 0.0,
+        "foot": 29.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001623",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1942663,
+            55.9478107
+          ],
+          [
+            -3.212521,
+            55.9520966
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.0,
+        "bicycle": 0.0,
+        "bus": 1.0,
+        "car_driver": 0.0,
+        "car_passenger": 1.0,
+        "foot": 46.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.191581,
+            55.9508131
+          ],
+          [
+            -3.2069844,
+            55.9498897
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.5,
+        "bicycle": 3.5,
+        "bus": 7.0,
+        "car_driver": 3.5,
+        "car_passenger": 0.0,
+        "foot": 34.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.5
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.186092,
+            55.9569367
+          ],
+          [
+            -3.2152908,
+            55.9471495
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.5,
+        "bicycle": 3.5,
+        "bus": 7.0,
+        "car_driver": 3.5,
+        "car_passenger": 0.0,
+        "foot": 34.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001622",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.5
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.154166,
+            55.9410476
+          ],
+          [
+            -3.205168,
+            55.9330927
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 29.0,
+        "bicycle": 5.0,
+        "bus": 14.0,
+        "car_driver": 4.0,
+        "car_passenger": 0.0,
+        "foot": 6.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001616",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1804081,
+            55.9494651
+          ],
+          [
+            -3.2055114,
+            55.9458186
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.5,
+        "bicycle": 3.5,
+        "bus": 9.5,
+        "car_driver": 2.5,
+        "car_passenger": 0.5,
+        "foot": 30.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001620",
+        "other": 0.5,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1769127,
+            55.9448567
+          ],
+          [
+            -3.207424,
+            55.9436866
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.5,
+        "bicycle": 3.5,
+        "bus": 9.5,
+        "car_driver": 2.5,
+        "car_passenger": 0.5,
+        "foot": 30.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001620",
+        "other": 0.5,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1816575,
+            55.946351
+          ],
+          [
+            -3.1795088,
+            55.9391212
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.0,
+        "bicycle": 3.0,
+        "bus": 0.75,
+        "car_driver": 1.75,
+        "car_passenger": 0.0,
+        "foot": 41.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1760245,
+            55.9523182
+          ],
+          [
+            -3.2035927,
+            55.9407661
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.0,
+        "bicycle": 3.0,
+        "bus": 0.75,
+        "car_driver": 1.75,
+        "car_passenger": 0.0,
+        "foot": 41.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1702105,
+            55.9425595
+          ],
+          [
+            -3.1858738,
+            55.9443175
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.0,
+        "bicycle": 3.0,
+        "bus": 0.75,
+        "car_driver": 1.75,
+        "car_passenger": 0.0,
+        "foot": 41.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1773716,
+            55.9458685
+          ],
+          [
+            -3.2043428,
+            55.9399104
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 47.0,
+        "bicycle": 3.0,
+        "bus": 0.75,
+        "car_driver": 1.75,
+        "car_passenger": 0.0,
+        "foot": 41.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1805156,
+            55.9494505
+          ],
+          [
+            -3.1937113,
+            55.9503729
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.833333333333336,
+        "bicycle": 1.5,
+        "bus": 3.6666666666666665,
+        "car_driver": 1.0,
+        "car_passenger": 0.16666666666666666,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1720716,
+            55.9505346
+          ],
+          [
+            -3.1828559,
+            55.9508084
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.833333333333336,
+        "bicycle": 1.5,
+        "bus": 3.6666666666666665,
+        "car_driver": 1.0,
+        "car_passenger": 0.16666666666666666,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1840428,
+            55.9449648
+          ],
+          [
+            -3.1918014,
+            55.9479606
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.833333333333336,
+        "bicycle": 1.5,
+        "bus": 3.6666666666666665,
+        "car_driver": 1.0,
+        "car_passenger": 0.16666666666666666,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.164769,
+            55.9518229
+          ],
+          [
+            -3.1906894,
+            55.9562069
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.833333333333336,
+        "bicycle": 1.5,
+        "bus": 3.6666666666666665,
+        "car_driver": 1.0,
+        "car_passenger": 0.16666666666666666,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1746441,
+            55.9496882
+          ],
+          [
+            -3.1945108,
+            55.9540531
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.833333333333336,
+        "bicycle": 1.5,
+        "bus": 3.6666666666666665,
+        "car_driver": 1.0,
+        "car_passenger": 0.16666666666666666,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1731753,
+            55.9518602
+          ],
+          [
+            -3.1933886,
+            55.9526177
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.833333333333336,
+        "bicycle": 1.5,
+        "bus": 3.6666666666666665,
+        "car_driver": 1.0,
+        "car_passenger": 0.16666666666666666,
+        "foot": 39.333333333333336,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.170636,
+            55.9417573
+          ],
+          [
+            -3.1746247,
+            55.9526541
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 49.0,
+        "bicycle": 1.0,
+        "bus": 1.0,
+        "car_driver": 1.5,
+        "car_passenger": 1.5,
+        "foot": 44.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001623",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1650263,
+            55.9517738
+          ],
+          [
+            -3.1732238,
+            55.9501187
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 49.0,
+        "bicycle": 1.0,
+        "bus": 1.0,
+        "car_driver": 1.5,
+        "car_passenger": 1.5,
+        "foot": 44.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001623",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1745876,
+            55.9527999
+          ],
+          [
+            -3.2107638,
+            55.9527757
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 26.0,
+        "bicycle": 1.0,
+        "bus": 6.0,
+        "car_driver": 3.0,
+        "car_passenger": 1.0,
+        "foot": 15.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1702105,
+            55.9425595
+          ],
+          [
+            -3.2202493,
+            55.9459074
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 39.0,
+        "bicycle": 3.0,
+        "bus": 13.0,
+        "car_driver": 1.0,
+        "car_passenger": 0.5,
+        "foot": 17.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 4.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1751373,
+            55.9430096
+          ],
+          [
+            -3.2152908,
+            55.9471495
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 39.0,
+        "bicycle": 3.0,
+        "bus": 13.0,
+        "car_driver": 1.0,
+        "car_passenger": 0.5,
+        "foot": 17.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001623",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 4.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2004429,
+            55.9530772
+          ],
+          [
+            -3.2240681,
+            55.9260058
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 12.0,
+        "bicycle": 0.0,
+        "bus": 6.0,
+        "car_driver": 3.0,
+        "car_passenger": 0.0,
+        "foot": 3.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001616",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2092701,
+            55.9529914
+          ],
+          [
+            -3.2034253,
+            55.9419942
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.0,
+        "bicycle": 0.0,
+        "bus": 3.75,
+        "car_driver": 1.75,
+        "car_passenger": 0.0,
+        "foot": 38.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001620",
+        "other": 0.75,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2111678,
+            55.951503
+          ],
+          [
+            -3.2025139,
+            55.9433661
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.0,
+        "bicycle": 0.0,
+        "bus": 3.75,
+        "car_driver": 1.75,
+        "car_passenger": 0.0,
+        "foot": 38.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001620",
+        "other": 0.75,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2111697,
+            55.9520849
+          ],
+          [
+            -3.2015531,
+            55.94751
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.0,
+        "bicycle": 0.0,
+        "bus": 3.75,
+        "car_driver": 1.75,
+        "car_passenger": 0.0,
+        "foot": 38.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001620",
+        "other": 0.75,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2111409,
+            55.9514029
+          ],
+          [
+            -3.2111923,
+            55.946844
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 45.0,
+        "bicycle": 0.0,
+        "bus": 3.75,
+        "car_driver": 1.75,
+        "car_passenger": 0.0,
+        "foot": 38.75,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001620",
+        "other": 0.75,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.194403,
+            55.9555614
+          ],
+          [
+            -3.1896653,
+            55.94569
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 26.0,
+        "bicycle": 2.0,
+        "bus": 6.0,
+        "car_driver": 3.0,
+        "car_passenger": 0.0,
+        "foot": 15.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2112365,
+            55.9514351
+          ],
+          [
+            -3.1947513,
+            55.9403516
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 26.0,
+        "bicycle": 2.0,
+        "bus": 6.0,
+        "car_driver": 3.0,
+        "car_passenger": 0.0,
+        "foot": 15.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2017891,
+            55.9553832
+          ],
+          [
+            -3.1875481,
+            55.9501678
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.5,
+        "bicycle": 1.3333333333333333,
+        "bus": 4.5,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.16666666666666666,
+        "foot": 34.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1944323,
+            55.9546172
+          ],
+          [
+            -3.1908996,
+            55.9509348
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.5,
+        "bicycle": 1.3333333333333333,
+        "bus": 4.5,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.16666666666666666,
+        "foot": 34.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2050093,
+            55.9569872
+          ],
+          [
+            -3.1873715,
+            55.9497717
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.5,
+        "bicycle": 1.3333333333333333,
+        "bus": 4.5,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.16666666666666666,
+        "foot": 34.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2093568,
+            55.9529899
+          ],
+          [
+            -3.192839,
+            55.9526238
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.5,
+        "bicycle": 1.3333333333333333,
+        "bus": 4.5,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.16666666666666666,
+        "foot": 34.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2065953,
+            55.9535098
+          ],
+          [
+            -3.1860133,
+            55.9503777
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.5,
+        "bicycle": 1.3333333333333333,
+        "bus": 4.5,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.16666666666666666,
+        "foot": 34.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2114027,
+            55.9521989
+          ],
+          [
+            -3.19123,
+            55.9468365
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.5,
+        "bicycle": 1.3333333333333333,
+        "bus": 4.5,
+        "car_driver": 1.6666666666666667,
+        "car_passenger": 0.16666666666666666,
+        "foot": 34.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001622",
+        "other": 0.16666666666666666,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2025735,
+            55.9568242
+          ],
+          [
+            -3.1746198,
+            55.9529696
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 24.0,
+        "bicycle": 2.0,
+        "bus": 3.0,
+        "car_driver": 4.0,
+        "car_passenger": 1.0,
+        "foot": 14.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001623",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.1933408,
+            55.9557409
+          ],
+          [
+            -3.2115005,
+            55.9522261
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.5,
+        "bicycle": 0.5,
+        "bus": 1.0,
+        "car_driver": 1.5,
+        "car_passenger": 0.5,
+        "foot": 39.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2032874,
+            55.9569323
+          ],
+          [
+            -3.2088193,
+            55.9530825
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 42.5,
+        "bicycle": 0.5,
+        "bus": 1.0,
+        "car_driver": 1.5,
+        "car_passenger": 0.5,
+        "foot": 39.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001656",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2124584,
+            55.9521351
+          ],
+          [
+            -3.2243466,
+            55.95045
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 43.0,
+        "bicycle": 1.3333333333333333,
+        "bus": 2.3333333333333335,
+        "car_driver": 2.0,
+        "car_passenger": 0.0,
+        "foot": 36.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.6666666666666666
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2076034,
+            55.9574359
+          ],
+          [
+            -3.2196197,
+            55.9500877
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 43.0,
+        "bicycle": 1.3333333333333333,
+        "bus": 2.3333333333333335,
+        "car_driver": 2.0,
+        "car_passenger": 0.0,
+        "foot": 36.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.6666666666666666
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2104143,
+            55.952877
+          ],
+          [
+            -3.2274188,
+            55.9458072
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 43.0,
+        "bicycle": 1.3333333333333333,
+        "bus": 2.3333333333333335,
+        "car_driver": 2.0,
+        "car_passenger": 0.0,
+        "foot": 36.666666666666664,
+        "from_home": 0.0,
+        "geo_code1": "S02001656",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.6666666666666666
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.218046,
+            55.9458647
+          ],
+          [
+            -3.2049924,
+            55.9386901
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 43.0,
+        "bicycle": 5.0,
+        "bus": 8.0,
+        "car_driver": 13.0,
+        "car_passenger": 0.0,
+        "foot": 17.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001616",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2164932,
+            55.946183
+          ],
+          [
+            -3.2061472,
+            55.9446228
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.0,
+        "bicycle": 0.8571428571428571,
+        "bus": 2.5714285714285716,
+        "car_driver": 2.857142857142857,
+        "car_passenger": 0.2857142857142857,
+        "foot": 40.857142857142854,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001620",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2332851,
+            55.9454609
+          ],
+          [
+            -3.2063912,
+            55.9481371
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.0,
+        "bicycle": 0.8571428571428571,
+        "bus": 2.5714285714285716,
+        "car_driver": 2.857142857142857,
+        "car_passenger": 0.2857142857142857,
+        "foot": 40.857142857142854,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001620",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2195335,
+            55.9500349
+          ],
+          [
+            -3.2050551,
+            55.9448017
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.0,
+        "bicycle": 0.8571428571428571,
+        "bus": 2.5714285714285716,
+        "car_driver": 2.857142857142857,
+        "car_passenger": 0.2857142857142857,
+        "foot": 40.857142857142854,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001620",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2275291,
+            55.952884
+          ],
+          [
+            -3.2074471,
+            55.9457632
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.0,
+        "bicycle": 0.8571428571428571,
+        "bus": 2.5714285714285716,
+        "car_driver": 2.857142857142857,
+        "car_passenger": 0.2857142857142857,
+        "foot": 40.857142857142854,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001620",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2223056,
+            55.95085
+          ],
+          [
+            -3.2037766,
+            55.9439366
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.0,
+        "bicycle": 0.8571428571428571,
+        "bus": 2.5714285714285716,
+        "car_driver": 2.857142857142857,
+        "car_passenger": 0.2857142857142857,
+        "foot": 40.857142857142854,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001620",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2239052,
+            55.9503992
+          ],
+          [
+            -3.2130593,
+            55.9461332
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.0,
+        "bicycle": 0.8571428571428571,
+        "bus": 2.5714285714285716,
+        "car_driver": 2.857142857142857,
+        "car_passenger": 0.2857142857142857,
+        "foot": 40.857142857142854,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001620",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2167381,
+            55.9461479
+          ],
+          [
+            -3.2070698,
+            55.9438515
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 48.0,
+        "bicycle": 0.8571428571428571,
+        "bus": 2.5714285714285716,
+        "car_driver": 2.857142857142857,
+        "car_passenger": 0.2857142857142857,
+        "foot": 40.857142857142854,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001620",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2082351,
+            55.9502927
+          ],
+          [
+            -3.1865212,
+            55.9450147
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 29.5,
+        "bicycle": 2.5,
+        "bus": 5.0,
+        "car_driver": 3.5,
+        "car_passenger": 0.0,
+        "foot": 18.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2034648,
+            55.952538
+          ],
+          [
+            -3.1789001,
+            55.9383823
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 29.5,
+        "bicycle": 2.5,
+        "bus": 5.0,
+        "car_driver": 3.5,
+        "car_passenger": 0.0,
+        "foot": 18.5,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001621",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2133436,
+            55.9512357
+          ],
+          [
+            -3.1919735,
+            55.9482479
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.57142857142857,
+        "bicycle": 1.8571428571428572,
+        "bus": 9.571428571428571,
+        "car_driver": 2.5714285714285716,
+        "car_passenger": 0.5714285714285714,
+        "foot": 31.428571428571427,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001622",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2035028,
+            55.9523827
+          ],
+          [
+            -3.1859804,
+            55.9470451
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.57142857142857,
+        "bicycle": 1.8571428571428572,
+        "bus": 9.571428571428571,
+        "car_driver": 2.5714285714285716,
+        "car_passenger": 0.5714285714285714,
+        "foot": 31.428571428571427,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001622",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2133436,
+            55.9512357
+          ],
+          [
+            -3.1971404,
+            55.9536051
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.57142857142857,
+        "bicycle": 1.8571428571428572,
+        "bus": 9.571428571428571,
+        "car_driver": 2.5714285714285716,
+        "car_passenger": 0.5714285714285714,
+        "foot": 31.428571428571427,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001622",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2068706,
+            55.9534042
+          ],
+          [
+            -3.182552,
+            55.9508579
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.57142857142857,
+        "bicycle": 1.8571428571428572,
+        "bus": 9.571428571428571,
+        "car_driver": 2.5714285714285716,
+        "car_passenger": 0.5714285714285714,
+        "foot": 31.428571428571427,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001622",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2058342,
+            55.9504825
+          ],
+          [
+            -3.1852054,
+            55.9573302
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.57142857142857,
+        "bicycle": 1.8571428571428572,
+        "bus": 9.571428571428571,
+        "car_driver": 2.5714285714285716,
+        "car_passenger": 0.5714285714285714,
+        "foot": 31.428571428571427,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001622",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2071315,
+            55.9500968
+          ],
+          [
+            -3.197833,
+            55.9480601
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.57142857142857,
+        "bicycle": 1.8571428571428572,
+        "bus": 9.571428571428571,
+        "car_driver": 2.5714285714285716,
+        "car_passenger": 0.5714285714285714,
+        "foot": 31.428571428571427,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001622",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.21657,
+            55.9461769
+          ],
+          [
+            -3.1892474,
+            55.945932
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 46.57142857142857,
+        "bicycle": 1.8571428571428572,
+        "bus": 9.571428571428571,
+        "car_driver": 2.5714285714285716,
+        "car_passenger": 0.5714285714285714,
+        "foot": 31.428571428571427,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001622",
+        "other": 0.2857142857142857,
+        "train": 0.2857142857142857
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2278149,
+            55.9528651
+          ],
+          [
+            -3.171484,
+            55.9416568
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 38.0,
+        "bicycle": 3.0,
+        "bus": 16.0,
+        "car_driver": 4.0,
+        "car_passenger": 0.0,
+        "foot": 15.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001623",
+        "other": 0.0,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2207722,
+            55.950749
+          ],
+          [
+            -3.1990547,
+            55.9568671
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 35.0,
+        "bicycle": 1.0,
+        "bus": 2.6666666666666665,
+        "car_driver": 5.666666666666667,
+        "car_passenger": 0.6666666666666666,
+        "foot": 24.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001656",
+        "other": 0.3333333333333333,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.213017,
+            55.9513834
+          ],
+          [
+            -3.2113185,
+            55.9522749
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 35.0,
+        "bicycle": 1.0,
+        "bus": 2.6666666666666665,
+        "car_driver": 5.666666666666667,
+        "car_passenger": 0.6666666666666666,
+        "foot": 24.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001656",
+        "other": 0.3333333333333333,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.21657,
+            55.9461769
+          ],
+          [
+            -3.2114642,
+            55.9515117
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 35.0,
+        "bicycle": 1.0,
+        "bus": 2.6666666666666665,
+        "car_driver": 5.666666666666667,
+        "car_passenger": 0.6666666666666666,
+        "foot": 24.666666666666668,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001656",
+        "other": 0.3333333333333333,
+        "train": 0.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2081219,
+            55.9503308
+          ],
+          [
+            -3.2060448,
+            55.9504554
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 50.0,
+        "bicycle": 0.5714285714285714,
+        "bus": 4.285714285714286,
+        "car_driver": 3.857142857142857,
+        "car_passenger": 0.42857142857142855,
+        "foot": 40.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.8571428571428571
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2223056,
+            55.95085
+          ],
+          [
+            -3.2005297,
+            55.9529324
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 50.0,
+        "bicycle": 0.5714285714285714,
+        "bus": 4.285714285714286,
+        "car_driver": 3.857142857142857,
+        "car_passenger": 0.42857142857142855,
+        "foot": 40.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.8571428571428571
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2136532,
+            55.9522562
+          ],
+          [
+            -3.218046,
+            55.9458647
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 50.0,
+        "bicycle": 0.5714285714285714,
+        "bus": 4.285714285714286,
+        "car_driver": 3.857142857142857,
+        "car_passenger": 0.42857142857142855,
+        "foot": 40.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.8571428571428571
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.230117,
+            55.9525357
+          ],
+          [
+            -3.2162476,
+            55.9498609
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 50.0,
+        "bicycle": 0.5714285714285714,
+        "bus": 4.285714285714286,
+        "car_driver": 3.857142857142857,
+        "car_passenger": 0.42857142857142855,
+        "foot": 40.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.8571428571428571
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2071462,
+            55.9501606
+          ],
+          [
+            -3.2034321,
+            55.9525176
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 50.0,
+        "bicycle": 0.5714285714285714,
+        "bus": 4.285714285714286,
+        "car_driver": 3.857142857142857,
+        "car_passenger": 0.42857142857142855,
+        "foot": 40.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.8571428571428571
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2315855,
+            55.9455595
+          ],
+          [
+            -3.2069782,
+            55.9525222
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 50.0,
+        "bicycle": 0.5714285714285714,
+        "bus": 4.285714285714286,
+        "car_driver": 3.857142857142857,
+        "car_passenger": 0.42857142857142855,
+        "foot": 40.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.8571428571428571
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -3.2036263,
+            55.9524421
+          ],
+          [
+            -3.2207722,
+            55.950749
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {
+        "all": 50.0,
+        "bicycle": 0.5714285714285714,
+        "bus": 4.285714285714286,
+        "car_driver": 3.857142857142857,
+        "car_passenger": 0.42857142857142855,
+        "foot": 40.0,
+        "from_home": 0.0,
+        "geo_code1": "S02001660",
+        "geo_code2": "S02001660",
+        "other": 0.0,
+        "train": 0.8571428571428571
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

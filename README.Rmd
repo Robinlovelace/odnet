@@ -13,6 +13,12 @@ title: "Disaggregating origin-destination data: methods, implementations, and op
 
 ```{r, echo=FALSE, eval=FALSE}
 rbbt::bbt_update_bib("README.Rmd", path_bib = "references.bib")
+# count words
+wordcountaddin::text_stats_chr(readLines("README.Rmd"))
+# get the data:
+system("wget https://github.com/dabreegster/odjitter/archive/refs/heads/main.zip")
+unzip("main.zip")
+file.rename("odjitter-main/data", "data")
 ```
 
 
@@ -35,13 +41,11 @@ Thus, the entire transport system of London can be represented, albeit simplisti
 Because of these easy-to-use characteristics, OD datasets have long been used to describe aggregate urban mobility patterns [@carey_method_1981].
 Typically, and historically to reduce computational requirements, the *geographic* representation of OD datasets has been based on zone centroids, with all trips shown as departing from and arriving to a single centroid per zone.
 Connecting zones with straight lines in this way results in geographic 'desire lines' which can be converted into geographic objects or simply used for visualisation purposes.
-This approach to the geographic visualisation of OD data makes sense: it can provide a quick summary of the movement patterns between zones, particularly when attributes such as total number of trips and the percentage of trips made by a particular mode are represented by variable aesthetics such as line width and colour
+This approach to the geographic visualisation of OD data makes sense: it can provide a quick summary of the movement patterns between zones, particularly when attributes such as total number of trips and the percentage of trips made by a particular mode are represented by variable aesthetics such as line width and colour.
 
 <!-- Todo: add figure showing this? -->
 
-# Methods
-
-# Data
+# Data and methods
 
 # Findings
 

@@ -39,3 +39,7 @@ vignettes/*.pdf
 .Renviron
 *.log
 *.pdf
+*.zip
+odjitter-main/
+*.html
+data/

@@ -46,11 +46,10 @@ Figure <a href="#fig:od1">1.1</a>.
 
 However, the approach has limitations, including:
 
-1.  centroid-based desire lines obscure two-way flows (Tennekes and Chen
+1.  people do not travel in straight lines!
+2.  centroid-based desire lines obscure two-way flows (Tennekes and Chen
     2021)
-2.  people do not travel in straight lines!
-3.  incorrectly concentrate travel around certain points and, perhaps
-    most importantly
+3.  incorrect concentration of travel around certain points
 
 One way to add richness and realism to OD data is to convert the
 geographic desire lines into routes on the network and then aggregate

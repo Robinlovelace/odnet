@@ -57,9 +57,9 @@ Connecting zones with straight lines in this way has advantages: it can provide 
 
 However, the approach has limitations, including:
 
-1. centroid-based desire lines obscure two-way flows [@tennekes_design_2021]
-2. people do not travel in straight lines!
-3. incorrectly concentrate travel around certain points and, perhaps most importantly
+1. people do not travel in straight lines!
+2. centroid-based desire lines obscure two-way flows [@tennekes_design_2021]
+3. incorrect concentration of travel around certain points
 
 One way to add richness and realism to OD data is to convert the geographic desire lines into routes on the network and then aggregate the associated data to the route segment level to create route network outputs [@morgan_travel_2020].
 Route network generation from centroid-based desire lines addresses limitations 1 and 2 outlined above, but not 3.

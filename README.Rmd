@@ -1,12 +1,20 @@
 ---
-# output: bookdown::github_document2
-output:
-  bookdown::pdf_document2:
-    template: GISRUKPaperTemplate.tex
+# for rapid prototyping:
+output: bookdown::html_document2
+# for final pdf:
+# output:
+#   bookdown::pdf_document2:
+#     template: GISRUKPaperTemplate.tex
 bibliography: references.bib
+title: "Disaggregating origin-destination data: methods, implementations, and optimal parameters for generating accurate route networks for sustainable transport planning"
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo=FALSE, eval=FALSE}
+rbbt::bbt_update_bib("README.Rmd", path_bib = "references.bib")
+```
+
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -19,44 +27,27 @@ knitr::opts_chunk$set(
 
 # Introduction
 
+Origin-destination (OD) datasets are used to represents movement through geographic space, from an origin (O) to a destination (D).
+Also referred to as 'flow data'^[https://www.ons.gov.uk/census/2011census/2011censusdata/originanddestinationdata] OD datasets usually contain not only information about where they start or end, but also about the amount of movement between zones (which are often represented by a zone centroid) or other geographic entities.
+Because of their ability to encode a large amount of information about millions of trips in a relatively small amount of storage space, with the maximum number of rows in an aggregate OD dataset equal to square of the number of zones squared, including intra-zonal OD pairs.
+Thus, the entire transport system of London can be represented, albeit simplistically, as an OD dataset representing movement between the city's 33 boroughs with only 33^2 (1089) rows and a number of columns depending on the number of trip types.
+
+Because of these easy-to-use characteristics, OD datasets have long been used to describe aggregate urban mobility patterns [@carey_method_1981].
+Typically, and historically to reduce computational requirements, the *geographic* representation of OD datasets has been based on zone centroids, with all trips shown as departing from and arriving to a single centroid per zone.
+Connecting zones with straight lines in this way results in geographic 'desire lines' which can be converted into geographic objects or simply used for visualisation purposes.
+This approach to the geographic visualisation of OD data makes sense: it can provide a quick summary of the movement patterns between zones, particularly when attributes such as total number of trips and the percentage of trips made by a particular mode are represented by variable aesthetics such as line width and colour
+
+<!-- Todo: add figure showing this? -->
+
 # Methods
 
 # Data
-
-
-
-# Implementations
 
 # Findings
 
 
 # Discussion
 
-<!-- Original LaTeX: -->
-<!-- \begin{figure}[htbp] \begin{center}  -->
-<!-- \resizebox{0.3\textwidth}{!}{  -->
-<!-- 	\includegraphics{lancaster.png} -->
-<!-- } \caption{Location of Lancaster University} \label{first_figure} \end{center} \end{figure} % -->
-
-```{r lancaster, fig.cap="Location of Lancaster University", out.width="30%", fig.align='center'}
-knitr::include_graphics("lancaster.png")
-```
-
-References and Citations
-========================
-
-A list of references cited should be provided at the end of the paper
-using the Harvard format as shown below. Citations of these within the
-text should be given as follows: papers such as [@openshaw_view_1991] or
-a paper by @rey_show_2009.
-
-Books can also be cited [@graser_learning_2014].
-
-File format
-===========
-
-Papers should be submitted in unrestricted **pdf** format. Authors are
-requested to keep to the word limit of 1500 words.
 
 Acknowledgements
 ================

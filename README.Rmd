@@ -20,6 +20,9 @@ wordcountaddin::text_stats_chr(readLines("README.Rmd"))
 system("wget https://github.com/dabreegster/odjitter/archive/refs/heads/main.zip")
 unzip("main.zip")
 file.rename("odjitter-main/data", "data")
+file.copy("README.pdf", "odnet.pdf", overwrite = TRUE)
+piggyback::pb_upload("odnet.pdf")
+piggyback::pb_download_url("odnet.pdf")
 ```
 
 

@@ -1,7 +1,8 @@
 ---
-# for rapid prototyping:
-output: bookdown::html_document2
-# for final pdf:
+# # for rapid prototyping:
+output: bookdown::github_document2
+# output: bookdown::html_document2
+# #  for final pdf:
 # output:
 #   bookdown::pdf_document2:
 #     template: GISRUKPaperTemplate.tex
@@ -39,9 +40,29 @@ Because of their ability to encode a large amount of information about millions 
 Thus, the entire transport system of London can be represented, albeit simplistically, as an OD dataset representing movement between the city's 33 boroughs with only 33^2 (1089) rows and a number of columns depending on the number of trip types.
 
 Because of these easy-to-use characteristics, OD datasets have long been used to describe aggregate urban mobility patterns [@carey_method_1981].
-Typically, and historically to reduce computational requirements, the *geographic* representation of OD datasets has been based on zone centroids, with all trips shown as departing from and arriving to a single centroid per zone.
-Connecting zones with straight lines in this way results in geographic 'desire lines' which can be converted into geographic objects or simply used for visualisation purposes.
-This approach to the geographic visualisation of OD data makes sense: it can provide a quick summary of the movement patterns between zones, particularly when attributes such as total number of trips and the percentage of trips made by a particular mode are represented by variable aesthetics such as line width and colour.
+Typically, OD datasets are represented *geographically* as straight 'desire lines' between zone centroids, with all trips shown as departing from and arriving to a single centroid per zone, for convenience, simplicity and (historically) to reduce computational requirements.
+This approach, illustrated in Figure \@ref(fig:od1) below, has formed the basis of many visualisations and research projects using OD data [e.g. @rae_spatial_2009; @calabrese_estimating_2011].
+
+```{r od1, fig.cap="Illustration of typicall representation of OD dataset, illustrating travel to work patterns in England. Source: author's [analysis](https://github.com/creds2/od-data) of open access data from the 2011 Census."}
+# system("wget https://github.com/creds2/od-data/blob/master/overview_map1.png") # failed
+# file.copy("~/orgs/creds2/od-data/overview_map1.png", ".")
+
+knitr::include_graphics("overview_map1.png")
+```
+
+Connecting zones with straight lines in this way has advantages: it can provide a quick summary of the movement patterns between zones, particularly when attributes such as total number of trips and the percentage of trips made by a particular mode are represented by variable aesthetics such as line width and colour, as illustrated in Figure \@ref(fig:od1).
+
+However, the approach has limitations, including:
+
+1. centroid-based desire lines obscure two-way flows [@tennekes_design_2021]
+2. people do not travel in straight lines!
+3. incorrectly concentrate travel around certain points and, perhaps most importantly
+
+One way to add richness and realism to OD data is to convert the geographic desire lines into routes on the network and then aggregate the associated data to the route segment level to create route network outputs [@morgan_travel_2020].
+Route network generation from centroid-based desire lines addresses limitations 1 and 2 outlined above, but not 3.
+In this paper we explore the potential for different 'jittering' and disaggregation approaches to address limitations 1 to 3.
+Unlike some previous methodological papers on OD data, we are not only concerned with the visualisation of the data.
+The aim is to not only create informative visualisations but also to generate accurate results, measured as a correlation between estimated flow on the network from the route network results and real world datasets, and valuable open access datasets for subsequent geographic analysis steps.
 
 <!-- Todo: add figure showing this? -->
 

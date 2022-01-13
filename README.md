@@ -158,6 +158,12 @@ appropriate.
 All contributing authors should include a biography of no more than 50
 words each outlining their career stage and research interests.
 
+Dustin is a software engineer at the Alan Turing Institute, where he's creating
+an ecosystem of interoperable digital twins to study urban transportation and
+pandemics. He's the creator of the [A/B Street](https://abstreet.org)
+transportation planning platform, and a proponent of open source code and the
+Rust programming language.
+
 # 8 References
 
 <div id="refs" class="references csl-bib-body hanging-indent">

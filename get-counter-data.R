@@ -27,5 +27,6 @@ cycle_counts_sf = cycle_counts %>%
   sf::st_as_sf(., coords = c("longitude", "latitude"), crs = 4326)
 sf::st_write(cycle_counts_sf, "cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson")
 piggyback::pb_upload("cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson")
+piggyback::pb_download_url("cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson")
 
 mapview::mapview(cycle_counts_sf)

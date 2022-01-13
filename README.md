@@ -69,70 +69,66 @@ datasets for subsequent geographic analysis steps.
 
 # 2 Data and methods
 
-To run algorithm you need a minimum of three inputs, examples of which
-are provided in the `data/` folder of this repo:
+The geographic input datasets on which the analysis presented in this
+paper build are cleaned versions of open datasets representing the
+transport system in Edinburgh:
 
-1.  A .csv file containing OD data with two columns containing zone IDs
-    (specified with `--origin-key=geo_code1 --destination-key=geo_code2`
-    by default) and other columns representing trip counts:
+-   Open access cycle counter data, stored in
+    [`cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
+-   Open zones data, stored in
+    [`iz_zones11_ed`](https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson)
+-   Open road network data from OSM, stored as
+    [`road_network_ed.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
+
+A non-geographic OD dataset representing trips between the zones was
+also generated and saved as a [.csv
+file](https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_iz_ed.csv),
+the first three elements of which are presented in the table below.
 
 | geo_code1 | geo_code2 | all | from_home | train | bus | car_driver | car_passenger | bicycle | foot | other |
 |:----------|:----------|----:|----------:|------:|----:|-----------:|--------------:|--------:|-----:|------:|
-| S02001616 | S02001616 |  82 |         0 |     0 |   3 |          6 |             0 |       2 |   71 |     0 |
-| S02001616 | S02001620 | 188 |         0 |     0 |  42 |         26 |             3 |      11 |  105 |     1 |
-| S02001616 | S02001621 |  99 |         0 |     0 |  13 |          7 |             3 |      15 |   61 |     0 |
+| S02001576 | S02001576 | 151 |         0 |     0 |   6 |         61 |             7 |       5 |   70 |     2 |
+| S02001576 | S02001577 | 132 |         0 |     0 |  11 |         84 |            10 |      11 |   15 |     1 |
+| S02001576 | S02001578 |  40 |         0 |     0 |   5 |         32 |             2 |       0 |    1 |     0 |
 
-2.  A [.geojson
-    file](https://github.com/dabreegster/odjitter/blob/main/data/zones.geojson)
-    representing zones that contains values matching the zone IDs in the
-    OD data (the field containing zone IDs is specified with
-    `--zone-name-key=InterZone` by default):
+Table 2.1: Sample of three rows from the OD dataset used in this paper.
 
-<!-- -->
+![](README_files/figure-gfm/overview-1.png)<!-- -->
 
-    #> {
-    #> "type": "FeatureCollection",
-    #> "name": "zones_min",
-    #> "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-    #> "features": [
-    #> { "type": "Feature", "properties": { "InterZone": "S02001616", "Name": "Merchiston and Greenhill", "TotPop2011": 5018, "ResPop2011": 4730, "HHCnt2011": 2186, "StdAreaHa": 126.910911, "StdAreaKm2": 1.269109, "Shape_Leng": 9073.5402482000009, "Shape_Area": 1269109.10155 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -3.2040366, 55.9333372 ], [ -3.2036354, 55.9321624 ], [ -3.2024036, 55.9321874 ], [ -3.2019838, 55.9315586 ], [ -3.2005071, 55.9317411 ], [ -3.199902, 55.931113 ], [ -3.2033504, 55.9308279 ], [ -3.2056319, 55.9309507 ], [ -3.2094979, 55.9308666 ], [ -3.2109753, 55.9299985 ], [ -3.2107073, 55.9285904 ], [ -3.2124928, 55.927854 ], [ -3.2125633, 55.9264661 ], [ -3.2094928, 55.9265616 ], [ -3.212929, 55.9260741 ], [ -3.2130774, 55.9264384 ], [ -3.2183973, 55.9252709 ], [ -3.2208941, 55.925282 ], [ -3.2242732, 55.9258683 ], [ -3.2279975, 55.9277452 ], [ -3.2269867, 55.928489 ], [ -3.2267625, 55.9299817 ], [ -3.2254561, 55.9307854 ], [ -3.224148, 55.9300725 ], [ -3.2197791, 55.9315472 ], [ -3.2222706, 55.9339127 ], [ -3.2224909, 55.934809 ], [ -3.2197844, 55.9354692 ], [ -3.2204535, 55.936195 ], [ -3.218362, 55.9368806 ], [ -3.2165749, 55.937069 ], [ -3.215582, 55.9380761 ], [ -3.2124132, 55.9355465 ], [ -3.212774, 55.9347972 ], [ -3.2119068, 55.9341947 ], [ -3.210138, 55.9349668 ], [ -3.208051, 55.9347716 ], [ -3.2083105, 55.9364224 ], [ -3.2053546, 55.9381495 ], [ -3.2046077, 55.9395298 ], [ -3.20356, 55.9380951 ], [ -3.2024323, 55.936318 ], [ -3.2029121, 55.935831 ], [ -3.204832, 55.9357555 ], [ -3.2040366, 55.9333372 ] ] ] ] } },
-
-3.  A [.geojson
-    file](https://github.com/dabreegster/odjitter/blob/main/data/road_network.geojson)
-    representing a transport network from which origin and destination
-    points are sampled
-
-<!-- -->
-
-    #> {
-    #> "type": "FeatureCollection",
-    #> "name": "road_network_min",
-    #> "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-    #> "features": [
-    #> { "type": "Feature", "properties": { "osm_id": "3468", "name": "Albyn Place", "highway": "tertiary", "waterway": null, "aerialway": null, "barrier": null, "man_made": null, "access": null, "bicycle": null, "service": null, "z_order": 4, "other_tags": "\"lit\"=>\"yes\",\"lanes\"=>\"3\",\"maxspeed\"=>\"20 mph\",\"sidewalk\"=>\"both\",\"lanes:forward\"=>\"2\",\"lanes:backward\"=>\"1\"" }, "geometry": { "type": "LineString", "coordinates": [ [ -3.207438, 55.9533584 ], [ -3.2065953, 55.9535098 ] ] } },
-
-The `jitter` function requires you to set the maximum number of trips
-for all trips in the jittered result. A value of 1 will create a line
-for every trip in the dataset, a value above the maximum number of trips
-in the ‘all’ column in the OD ata will result in a jittered dataset that
-has the same number of desire lines (the geographic representation of OD
-pairs) as in the input (50 in this case).
-
-With reference to the test data in this repo, you can run the `jitter`
-command line tool as follows:
-
-    #> Scraped 7 zones from data/zones.geojson
-    #> Scraped 5073 subpoints from data/road_network.geojson
-    #> Disaggregating OD data
-    #> Wrote output_max50.geojson
-
-Try running it with a different `max-per-od` value (10 in the command
-below):
-
-    #> Scraped 7 zones from data/zones.geojson
-    #> Scraped 5073 subpoints from data/road_network.geojson
-    #> Disaggregating OD data
-    #> Wrote output_max10.geojson
+<!-- To run algorithm you need a minimum of three inputs, examples of which are provided in the `data/` folder of this repo: -->
+<!-- 1. A .csv file containing OD data with two columns containing zone IDs (specified with  `--origin-key=geo_code1 --destination-key=geo_code2` by default) and other columns representing trip counts: -->
+<!-- ```{r, echo=FALSE, message=FALSE} -->
+<!-- od = readr::read_csv("data/od.csv") -->
+<!-- knitr::kable(od[1:3, ]) -->
+<!-- ``` -->
+<!-- 2. A [.geojson file](https://github.com/dabreegster/odjitter/blob/main/data/zones.geojson) representing zones that contains values matching the zone IDs in the OD data (the field containing zone IDs is specified with `--zone-name-key=InterZone` by default): -->
+<!-- ```{r, echo=FALSE} -->
+<!-- # zones = sf::read_sf("data/zones.geojson") -->
+<!-- # zones[1:3, ] -->
+<!-- ``` -->
+<!-- ```{bash} -->
+<!-- head -6 data/zones.geojson -->
+<!-- ``` -->
+<!-- 3. A [.geojson file](https://github.com/dabreegster/odjitter/blob/main/data/road_network.geojson) representing a transport network from which origin and destination points are sampled -->
+<!-- ```{bash} -->
+<!-- head -6 data/road_network.geojson -->
+<!-- ``` -->
+<!-- The `jitter` function requires you to set the maximum number of trips for all trips in the jittered result. -->
+<!-- A value of 1 will create a line for every trip in the dataset, a value above the maximum number of trips in the 'all' column in the OD ata will result in a jittered dataset that has the same number of desire lines (the geographic representation of OD pairs) as in the input (50 in this case). -->
+<!-- With reference to the test data in this repo, you can run the `jitter` command line tool as follows: -->
+<!-- ```{bash} -->
+<!-- odjitter --od-csv-path data/od.csv \ -->
+<!--   --zones-path data/zones.geojson \ -->
+<!--   --subpoints-path data/road_network.geojson \ -->
+<!--   --max-per-od 50 --output-path output_max50.geojson -->
+<!-- ``` -->
+<!-- Try running it with a different `max-per-od` value (10 in the command below): -->
+<!-- ```{bash} -->
+<!-- odjitter --od-csv-path data/od.csv \ -->
+<!--   --zones-path data/zones.geojson \ -->
+<!--   --subpoints-path data/road_network.geojson \ -->
+<!--   --max-per-od 10 --output-path output_max10.geojson -->
+<!-- ``` -->
 
 # 3 Outputs
 
@@ -143,7 +139,7 @@ visualisations of desire lines between zones), the central image showing
 the result after setting `max-per-od` argument to 50, and the right hand
 figure showing the result after setting `max-per-od` to 10.
 
-<img src="README_files/figure-gfm/unnamed-chunk-9-1.png" width="30%" /><img src="README_files/figure-gfm/unnamed-chunk-9-2.png" width="30%" /><img src="README_files/figure-gfm/unnamed-chunk-9-3.png" width="30%" />
+<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" width="30%" /><img src="README_files/figure-gfm/unnamed-chunk-5-2.png" width="30%" /><img src="README_files/figure-gfm/unnamed-chunk-5-3.png" width="30%" />
 
 # 4 Findings
 

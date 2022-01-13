@@ -26,13 +26,16 @@ piggyback::pb_download_url("odnet.pdf")
 ```
 
 
-```{r, include = FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   echo = FALSE,
-  cache = TRUE
+  cache = TRUE,
+  message = FALSE
 )
+library(tidyverse)
+library(tmap)
 ```
 
 # Introduction
@@ -71,46 +74,83 @@ The aim is to not only create informative visualisations but also to generate ac
 
 # Data and methods
 
-To run algorithm you need a minimum of three inputs, examples of which are provided in the `data/` folder of this repo:
+The geographic input datasets on which the analysis presented in this paper build are cleaned versions of open datasets representing the transport system in Edinburgh:
 
-1. A .csv file containing OD data with two columns containing zone IDs (specified with  `--origin-key=geo_code1 --destination-key=geo_code2` by default) and other columns representing trip counts:
-```{r, echo=FALSE, message=FALSE}
-od = readr::read_csv("data/od.csv")
-knitr::kable(od[1:3, ])
-```
-2. A [.geojson file](https://github.com/dabreegster/odjitter/blob/main/data/zones.geojson) representing zones that contains values matching the zone IDs in the OD data (the field containing zone IDs is specified with `--zone-name-key=InterZone` by default):
-```{r, echo=FALSE}
-# zones = sf::read_sf("data/zones.geojson")
-# zones[1:3, ]
-```
-```{bash}
-head -6 data/zones.geojson
-```
-3. A [.geojson file](https://github.com/dabreegster/odjitter/blob/main/data/road_network.geojson) representing a transport network from which origin and destination points are sampled
-```{bash}
-head -6 data/road_network.geojson
-```
+- Open access cycle counter data, stored in [`cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
+- Open zones data, stored in [`iz_zones11_ed`](https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson)
+- Open road network data from OSM, stored as [`road_network_ed.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 
-The `jitter` function requires you to set the maximum number of trips for all trips in the jittered result.
-A value of 1 will create a line for every trip in the dataset, a value above the maximum number of trips in the 'all' column in the OD ata will result in a jittered dataset that has the same number of desire lines (the geographic representation of OD pairs) as in the input (50 in this case).
+A non-geographic OD dataset representing trips between the zones was also generated and saved as a [.csv file](https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_iz_ed.csv), the first three elements of which are presented in the table below.
 
-With reference to the test data in this repo, you can run the `jitter` command line tool as follows:
 
-```{bash}
-odjitter --od-csv-path data/od.csv \
-  --zones-path data/zones.geojson \
-  --subpoints-path data/road_network.geojson \
-  --max-per-od 50 --output-path output_max50.geojson
+```{r}
+counters = sf::read_sf("https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson")
+od = readr::read_csv("https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_iz_ed.csv")
+zones = sf::read_sf("https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson")
+centroids = sf::read_sf("https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_centroids11_ed.geojson")
+road_network = readRDS("~/papers/odjitter/road_network.Rds")
+# sf::write_sf(road_network, "road_network_ed.geojson")
+# piggyback::pb_upload("road_network_ed.geojson")
 ```
 
-Try running it with a different `max-per-od` value (10 in the command below):
-
-```{bash}
-odjitter --od-csv-path data/od.csv \
-  --zones-path data/zones.geojson \
-  --subpoints-path data/road_network.geojson \
-  --max-per-od 10 --output-path output_max10.geojson
+```{r}
+od %>% 
+  slice(1:3) %>% 
+  knitr::kable(caption = "Sample of three rows from the OD dataset used in this paper.")
 ```
+
+
+```{r overview}
+tm_shape(zones) +
+  tm_polygons("TotPop2011", palette = "-viridis", alpha = 0.5) +
+  tm_shape(road_network) +
+  tm_lines(col = "red", lwd = 0.2) +
+  tm_shape(counters, size = 2) +
+  tm_dots()
+```
+
+
+
+<!-- To run algorithm you need a minimum of three inputs, examples of which are provided in the `data/` folder of this repo: -->
+
+<!-- 1. A .csv file containing OD data with two columns containing zone IDs (specified with  `--origin-key=geo_code1 --destination-key=geo_code2` by default) and other columns representing trip counts: -->
+<!-- ```{r, echo=FALSE, message=FALSE} -->
+<!-- od = readr::read_csv("data/od.csv") -->
+<!-- knitr::kable(od[1:3, ]) -->
+<!-- ``` -->
+<!-- 2. A [.geojson file](https://github.com/dabreegster/odjitter/blob/main/data/zones.geojson) representing zones that contains values matching the zone IDs in the OD data (the field containing zone IDs is specified with `--zone-name-key=InterZone` by default): -->
+<!-- ```{r, echo=FALSE} -->
+<!-- # zones = sf::read_sf("data/zones.geojson") -->
+<!-- # zones[1:3, ] -->
+<!-- ``` -->
+<!-- ```{bash} -->
+<!-- head -6 data/zones.geojson -->
+<!-- ``` -->
+<!-- 3. A [.geojson file](https://github.com/dabreegster/odjitter/blob/main/data/road_network.geojson) representing a transport network from which origin and destination points are sampled -->
+<!-- ```{bash} -->
+<!-- head -6 data/road_network.geojson -->
+<!-- ``` -->
+
+<!-- The `jitter` function requires you to set the maximum number of trips for all trips in the jittered result. -->
+<!-- A value of 1 will create a line for every trip in the dataset, a value above the maximum number of trips in the 'all' column in the OD ata will result in a jittered dataset that has the same number of desire lines (the geographic representation of OD pairs) as in the input (50 in this case). -->
+
+<!-- With reference to the test data in this repo, you can run the `jitter` command line tool as follows: -->
+
+<!-- ```{bash} -->
+<!-- odjitter --od-csv-path data/od.csv \ -->
+<!--   --zones-path data/zones.geojson \ -->
+<!--   --subpoints-path data/road_network.geojson \ -->
+<!--   --max-per-od 50 --output-path output_max50.geojson -->
+<!-- ``` -->
+
+<!-- Try running it with a different `max-per-od` value (10 in the command below): -->
+
+<!-- ```{bash} -->
+<!-- odjitter --od-csv-path data/od.csv \ -->
+<!--   --zones-path data/zones.geojson \ -->
+<!--   --subpoints-path data/road_network.geojson \ -->
+<!--   --max-per-od 10 --output-path output_max10.geojson -->
+<!-- ``` -->
 
 # Outputs
 

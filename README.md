@@ -71,7 +71,8 @@ datasets for subsequent geographic analysis steps.
 
 The geographic input datasets on which the analysis presented in this
 paper build are cleaned versions of open datasets representing the
-transport system in Edinburgh:
+transport system in Edinburgh (see Figure
+<a href="#fig:overview">2.1</a>):
 
 -   Open access cycle counter data, stored in
     [`cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
@@ -93,7 +94,23 @@ the first three elements of which are presented in the table below.
 
 Table 2.1: Sample of three rows from the OD dataset used in this paper.
 
-![](README_files/figure-gfm/overview-1.png)<!-- -->
+![Figure 2.1: Overview of the study area and the input geographic
+datasets. Dot size is proportional to mean cycle count at counter
+locations.](README_files/figure-gfm/overview-1.png)
+
+To test the performance of different parameters and settings for the
+OD-to-route-network conversion process, we focussed only on cycling
+trips as these were measured in the counter dataset mentioned. The
+following parameters were adjusted to explore their importance, in
+roughly descending order of frequency of mentions in the literature:
+
+1.  The routing profile used, which can ‘prefer’ differet route types,
+    resulting in ‘quiet’ to ‘fast’ networks (Desjardins et al. 2021)
+2.  The level of disaggregation, ranging from none to full
+    disaggregation (on desire line and route per trip) (Jafari et al.
+    2015)
+3.  Jittering strategy used to sample origin and destination points
+    within zones (Lovelace, Félix, and Carlino 2022)
 
 <!-- To run algorithm you need a minimum of three inputs, examples of which are provided in the `data/` folder of this repo: -->
 <!-- 1. A .csv file containing OD data with two columns containing zone IDs (specified with  `--origin-key=geo_code1 --destination-key=geo_code2` by default) and other columns representing trip counts: -->
@@ -130,22 +147,19 @@ Table 2.1: Sample of three rows from the OD dataset used in this paper.
 <!--   --max-per-od 10 --output-path output_max10.geojson -->
 <!-- ``` -->
 
-# 3 Outputs
+# 3 Findings
 
-The figure below shows the output of the `jitter` commands above
-visually, with the left image showing unjittered results with origins
-and destinations going to zone centroids (as in many if not most
-visualisations of desire lines between zones), the central image showing
-the result after setting `max-per-od` argument to 50, and the right hand
-figure showing the result after setting `max-per-od` to 10.
+Figure <a href="#fig:output1"><strong>??</strong></a> shows the output
+of the `jitter` commands above visually, with the .
 
-<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" width="30%" /><img src="README_files/figure-gfm/unnamed-chunk-5-2.png" width="30%" /><img src="README_files/figure-gfm/unnamed-chunk-5-3.png" width="30%" />
+<img src="README_files/figure-gfm/output1-1.png" title="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" alt="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" width="30%" /><img src="README_files/figure-gfm/output1-2.png" title="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" alt="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" width="30%" /><img src="README_files/figure-gfm/output1-3.png" title="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" alt="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" width="30%" />
 
-# 4 Findings
+<!-- Todo: update the above figure with more variations and show resulting route networks below -->
+<!-- Todo: present results comparing flow from counter data with route network results -->
 
-# 5 Discussion
+# 4 Discussion
 
-# 6 Acknowledgements
+# 5 Acknowledgements
 
 Acknowledgement should be made of any funding bodies who have supported
 the work reported in the paper, of those who have given permission for
@@ -153,12 +167,12 @@ their work to be reproduced or of individuals whose particular
 assistance is due recognition. Acknowledge data providers here where
 appropriate.
 
-# 7 Biography
+# 6 Biography
 
 All contributing authors should include a biography of no more than 50
 words each outlining their career stage and research interests.
 
-# 8 References
+# 7 References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
@@ -177,6 +191,34 @@ Carey, Malachy, Chris Hendrickson, and Krishnaswami Siddharthan. 1981.
 “A Method for Direct Estimation of Origin/Destination Trip Matrices.”
 *Transportation Science* 15 (1): 32–49.
 <https://doi.org/10.1287/trsc.15.1.32>.
+
+</div>
+
+<div id="ref-desjardins_correlates_2021" class="csl-entry">
+
+Desjardins, Elise, Christopher D. Higgins, Darren M. Scott, Emma Apatu,
+and Antonio Páez. 2021. “Correlates of Bicycling Trip Flows in Hamilton,
+Ontario: Fastest, Quietest, or Balanced Routes?” *Transportation*, June.
+<https://doi.org/10.1007/s11116-021-10197-1>.
+
+</div>
+
+<div id="ref-jafari_investigation_2015" class="csl-entry">
+
+Jafari, Ehsan, Mason D. Gemar, Natalia Ruiz Juri, and Jennifer Duthie.
+2015. “Investigation of Centroid Connector Placement for Advanced
+Traffic Assignment Models with Added Network Detail.” *Transportation
+Research Record: Journal of the Transportation Research Board* 2498
+(June): 19–26. <https://doi.org/10.3141/2498-03>.
+
+</div>
+
+<div id="ref-lovelace_jittering_2022" class="csl-entry">
+
+Lovelace, Robin, Rosa Félix, and Dustin Carlino. 2022. “Jittering: A
+Computationally Efficient Method for Generating Realistic Route Networks
+from Origin-Destination Data,” January.
+<https://doi.org/10.31219/osf.io/qux6g>.
 
 </div>
 

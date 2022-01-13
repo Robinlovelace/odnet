@@ -13,7 +13,6 @@ title: "Disaggregating origin-destination data: methods, implementations, and op
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, echo=FALSE, eval=FALSE}
-rbbt::bbt_update_bib("README.Rmd", path_bib = "references.bib")
 # count words
 wordcountaddin::text_stats_chr(readLines("README.Rmd"))
 # get the data:
@@ -27,6 +26,7 @@ piggyback::pb_download_url("odnet.pdf")
 
 
 ```{r, include=FALSE}
+rbbt::bbt_update_bib("README.Rmd", path_bib = "references.bib")
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -74,7 +74,7 @@ The aim is to not only create informative visualisations but also to generate ac
 
 # Data and methods
 
-The geographic input datasets on which the analysis presented in this paper build are cleaned versions of open datasets representing the transport system in Edinburgh:
+The geographic input datasets on which the analysis presented in this paper build are cleaned versions of open datasets representing the transport system in Edinburgh (see Figure \@ref(fig:overview)):
 
 - Open access cycle counter data, stored in [`cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 - Open zones data, stored in [`iz_zones11_ed`](https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson)
@@ -100,16 +100,21 @@ od %>%
 ```
 
 
-```{r overview}
+```{r overview, fig.cap="Overview of the study area and the input geographic datasets. Dot size is proportional to mean cycle count at counter locations."}
 tm_shape(zones) +
-  tm_polygons("TotPop2011", palette = "-viridis", alpha = 0.5) +
+  tm_borders(alpha = 0.5) +
   tm_shape(road_network) +
   tm_lines(col = "red", lwd = 0.2) +
   tm_shape(counters, size = 2) +
-  tm_dots()
+  tm_dots(size = "mean_count", size.lim = c(100, 1000))
 ```
 
+To test the performance of different parameters and settings for the OD-to-route-network conversion process, we focussed only on cycling trips as these were measured in the counter dataset mentioned.
+The following parameters were adjusted to explore their importance, in roughly descending order of frequency of mentions in the literature:
 
+1. The routing profile used, which can 'prefer' differet route types, resulting in 'quiet' to 'fast' networks [@desjardins_correlates_2021]
+2. The level of disaggregation, ranging from none to full disaggregation (on desire line and route per trip) [@jafari_investigation_2015]
+3. Jittering strategy used to sample origin and destination points within zones [@lovelace_jittering_2022] 
 
 <!-- To run algorithm you need a minimum of three inputs, examples of which are provided in the `data/` folder of this repo: -->
 
@@ -152,11 +157,11 @@ tm_shape(zones) +
 <!--   --max-per-od 10 --output-path output_max10.geojson -->
 <!-- ``` -->
 
-# Outputs
+# Findings
 
-The figure below shows the output of the `jitter` commands above visually, with the left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10.
+Figure \@ref(fig:output1) shows the output of the `jitter` commands above visually, with the .
 
-```{r, echo=FALSE, fig.show='hold', out.width="30%", message=FALSE}
+```{r output1, echo=FALSE, fig.show='hold', out.width="30%", message=FALSE, fig.cap="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10"}
 zones = sf::read_sf("data/zones.geojson")
 network = sf::read_sf("data/road_network.geojson")
 od_sf = od::od_to_sf(od, zones)
@@ -171,10 +176,9 @@ plot(network$geometry, col = "red", add = TRUE)
 plot(sf::read_sf("output_max10.geojson")$geometry, add = TRUE)
 ```
 
-# Findings
+<!-- Todo: update the above figure with more variations and show resulting route networks below -->
 
-
-
+<!-- Todo: present results comparing flow from counter data with route network results -->
 
 # Discussion
 

@@ -179,9 +179,11 @@ odjitter --od-csv-path od_iz_ed.csv \
 
 ```{r}
 desire_lines = od::od_to_sf(od, zones)
-# sum(desire_lines$bicycle > 0) # 3367 
+# sum(desire_lines$bicycle > 0) # 3367
 desire_lines_top = desire_lines %>% 
   top_n(n = 500, wt = bicycle)
+# sf::write_sf(desire_lines_top, "desire_lines_top.geojson")
+# piggyback::pb_upload("desire_lines_top.geojson")
 # write_csv(desire_lines_top %>% sf::st_drop_geometry(), "od_top.csv")
 # piggyback::pb_upload("od_top.csv")
 ```
@@ -233,15 +235,27 @@ plot(sf::read_sf("output_max10.geojson")$geometry, add = TRUE)
 
 <!-- Todo: present results comparing flow from counter data with route network results -->
 
+```{r}
+# list.files(pattern = "output")
+network_filenames = c("desire_lines_top.geojson", "output_max10k.geojson", "output_max10.geojson", "output_max50.geojson")
+names(network_filenames) = c("Centroid-based", "Jittered (no disaggregation)", "Jittered (50 trips max)", "Jittered (10 trips max)")
+```
+
+
 ```{r, eval=FALSE}
 # routing
 library(cyclestreets)
-# routing test
-
-routes_fast_top = route(l = desire_lines_top, route_fun = journey)
-sf::write_sf(routes_fast_top, "routes_fast_top.geojson")
-piggyback::pb_upload("routes_fast_top.geojson")
-piggyback::pb_download_url("routes_fast_top.geojson")
+i = network_filenames[1]
+for(i in network_filenames[2:4]) {
+  message("Getting routes for ", i)
+  desire_lines_i = sf::read_sf(i)
+  message("There are ", nrow(desire_lines_i), " desire lines with ", sum(desire_lines_i$bicycle), " trips")
+  routes_fast_top = route(l = desire_lines_top, route_fun = journey)
+  f_rnet = paste0("rnet_", i)
+  sf::write_sf(routes_fast_top, f_rnet)
+  piggyback::pb_upload(f_rnet)
+  piggyback::pb_download_url(f_rnet)
+}
 ```
 
 The route network level results associated with the same OD pairs are shown in Figure \@ref(fig:rnets).

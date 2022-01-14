@@ -7,7 +7,7 @@ output:
   bookdown::pdf_document2:
     template: GISRUKPaperTemplate.tex
 bibliography: references.bib
-title: "Disaggregating origin-destination data: methods, implementations, and optimal parameters for generating accurate route networks for sustainable transport planning"
+title: "Jittering origin-destination data: assessing methods for generating accurate route networks for sustainable transport planning"
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->

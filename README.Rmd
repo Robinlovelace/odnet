@@ -22,6 +22,7 @@ file.rename("odjitter-main/data", "data")
 file.copy("README.pdf", "odnet.pdf", overwrite = TRUE)
 piggyback::pb_upload("odnet.pdf")
 piggyback::pb_download_url("odnet.pdf")
+# https://github.com/Robinlovelace/odnet/releases/download/0/odnet.pdf
 ```
 
 

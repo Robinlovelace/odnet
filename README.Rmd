@@ -1,11 +1,11 @@
 ---
 # # for rapid prototyping:
-output: bookdown::github_document2
+# output: bookdown::github_document2
 # output: bookdown::html_document2
 # #  for final pdf:
-# output:
-#   bookdown::pdf_document2:
-#     template: GISRUKPaperTemplate.tex
+output:
+  bookdown::pdf_document2:
+    template: GISRUKPaperTemplate.tex
 bibliography: references.bib
 title: "Disaggregating origin-destination data: methods, implementations, and optimal parameters for generating accurate route networks for sustainable transport planning"
 ---
@@ -84,7 +84,7 @@ A non-geographic OD dataset representing trips between the zones was also genera
 
 ```{r}
 # download data
-if(!file.exists("https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson")) {
+if(!file.exists("cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson")) {
 system("wget https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson")
 system("wget https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_iz_ed.csv")
 system("wget https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson")
@@ -108,14 +108,15 @@ desire_lines = od::od_to_sf(od, zones)
 ```{r}
 od %>% 
   slice(1:3) %>% 
-  knitr::kable(caption = "Sample of three rows from the OD dataset used in this paper.")
+  select(-from_home, -other) %>% 
+  knitr::kable(caption = "Sample of three rows from the OD dataset used in this paper (from home and other modes not shown).", booktabs = TRUE)
 ```
 
 
 ```{r overview, fig.cap="Overview of the study area and the input geographic datasets. Dot size is proportional to mean cycle count at counter locations."}
 tm_shape(zones) +
   tm_borders(alpha = 0.5) +
-  tm_shape(road_network %>% sample_n(1000)) +
+  tm_shape(network %>% sample_n(1000)) +
   tm_lines(col = "red", lwd = 0.2) +
   tm_shape(counters, size = 2) +
   tm_dots(size = "mean_count", size.lim = c(100, 1000))
@@ -158,7 +159,7 @@ cargo install --git https://github.com/dabreegster/odjitter
 
 Generate jittered OD pairs with a `max-per-od` value of 50 as follows:
 
-```{bash, eval=FALSE}
+```bash
 odjitter --od-csv-path od_iz_ed.csv \
   --zones-path iz_zones11_ed.geojson \
   --subpoints-path road_network_ed.geojson \
@@ -167,7 +168,7 @@ odjitter --od-csv-path od_iz_ed.csv \
 
 Try running it with a different `max-per-od` value (10 in the command below):
 
-```{bash, eval=FALSE}
+```bash
 odjitter --od-csv-path od_iz_ed.csv \
   --zones-path iz_zones11_ed.geojson \
   --subpoints-path road_network_ed.geojson \
@@ -176,15 +177,14 @@ odjitter --od-csv-path od_iz_ed.csv \
 
 ```{r}
 desire_lines = od::od_to_sf(od, zones)
-sum(desire_lines$bicycle > 0) # 3367 
+# sum(desire_lines$bicycle > 0) # 3367 
 desire_lines_top = desire_lines %>% 
   top_n(n = 500, wt = bicycle)
 # write_csv(desire_lines_top %>% sf::st_drop_geometry(), "od_top.csv")
 # piggyback::pb_upload("od_top.csv")
 ```
 
-
-Generate results for top 500, run once:
+<!-- Generate results for top 500, run once: -->
 
 ```{bash, eval=FALSE}
 odjitter --od-csv-path od_top.csv \
@@ -247,6 +247,7 @@ counters_joined = sf::st_join(counters, rnet_fast, join = st_nearest_feature)
 cor(counters_joined$mean_count, counters_joined$bicycle)
 ```
 
+\pagebreak
 
 # Discussion
 

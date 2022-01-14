@@ -69,12 +69,9 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 
-
-
-
 % **************  TITLE AND AUTHOR INFORMATION **************
 
-\title{Disaggregating origin-destination data: methods, implementations, and optimal parameters for generating accurate route networks for sustainable transport planning}
+\title{Jittering origin-destination data: methods, implementations, and optimal parameters for generating accurate route networks for sustainable transport planning}
 
 \author[1]{Robin Lovelace\thanks{r.lovelace@leeds.ac.uk}}
 \author[2]{Rosa Félix}
@@ -94,7 +91,13 @@ $endif$
 \begin{abstract}
 \centering
 
-A well-known pitfall when studying origin-destination (OD) data aggregated over areal units is generating OD pairs that resemble real movements. Rather than deriving single OD flows from areal unit centroids, we present and report on a technique whereby, for any given pair of areal units, a rich set of OD flows is generated through sampling (or jittering) candidate point locations using the underlying road network at each areal unit as input data. We provide technical details around collecting and sampling from road network data and discuss exciting opportunities for parameterising the sampling process to generate flows that might be characteristic of particular stated travel behaviours.
+% Summary of no more than 100 words
+
+Origin-destination (OD) datasets are widely available but but transport interventions require data at the level of segments on the transport network.
+OD-`desire line'-route-`route network' conversion techniques are typically based on lines between zone centroids, which fails to show the diffuse nature of travel patterns.
+This paper presents `jittering' methods to overcome these limitations and seeks to assess them.
+We find that jittered OD datasets result in a closer fit between observed and estimated flow in a reproducible case study using open data in Edinburgh.
+Further research is needed to identify appropriate parameters for route network generation in other contexts.
 
 {\bf KEYWORDS:} origin-destination data, mobility data, visualisation, transport planning.
 

@@ -37,6 +37,7 @@ knitr::opts_chunk$set(
 )
 library(tidyverse)
 library(tmap)
+library(stplanr)
 ```
 
 # Introduction
@@ -233,19 +234,31 @@ plot(sf::read_sf("output_max10.geojson")$geometry, add = TRUE)
 <!-- Todo: present results comparing flow from counter data with route network results -->
 
 ```{r, eval=FALSE}
-library(sf)
-library(stplanr)
+# routing
 library(cyclestreets)
 # routing test
 
 routes_fast_top = route(l = desire_lines_top, route_fun = journey)
-qtm(routes_fast_top %>% sample_n(1000))
-nrow(routes_fast_top)
+sf::write_sf(routes_fast_top, "routes_fast_top.geojson")
+piggyback::pb_upload("routes_fast_top.geojson")
+piggyback::pb_download_url("routes_fast_top.geojson")
+```
+
+The route network level results associated with the same OD pairs are shown in Figure \@ref(fig:rnets).
+
+
+```{r rnets, fig.cap="Route network results."}
+u1 = "https://github.com/Robinlovelace/odnet/releases/download/0/routes_fast_top.geojson"
+f1 = basename(u1)
+if(!file.exists(f1)) download.file(u1, f1)
+routes_fast_top = sf::read_sf(f1)
+# qtm(routes_fast_top %>% sample_n(1000))
+# nrow(routes_fast_top)
 rnet_fast = overline(routes_fast_top, "bicycle")
 tm_shape(rnet_fast) +
-  tm_lines(lwd = "bicycle")
-counters_joined = sf::st_join(counters, rnet_fast, join = st_nearest_feature)
-cor(counters_joined$mean_count, counters_joined$bicycle)
+  tm_lines(lwd = "bicycle", scale = 4) 
+counters_joined = sf::st_join(counters, rnet_fast, join = sf::st_nearest_feature)
+# cor(counters_joined$mean_count, counters_joined$bicycle)
 ```
 
 \pagebreak

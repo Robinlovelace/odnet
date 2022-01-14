@@ -173,6 +173,13 @@ different values set for `max-per-od`.
 
 <!-- Todo: update the above figure with more variations and show resulting route networks below -->
 <!-- Todo: present results comparing flow from counter data with route network results -->
+
+The route network level results associated with the same OD pairs are
+shown in Figure <a href="#fig:rnets">3.1</a>.
+
+![Figure 3.1: Route network
+results.](README_files/figure-gfm/rnets-1.png)
+
 # 4 Discussion
 
 The approach is not without limitations. Despite the variability of

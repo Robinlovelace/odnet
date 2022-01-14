@@ -7,7 +7,7 @@ output:
   bookdown::pdf_document2:
     template: GISRUKPaperTemplate.tex
 bibliography: references.bib
-title: "Jittering origin-destination data: assessing methods for generating accurate route networks for sustainable transport planning"
+title: "Assessing methods for generating route networks from origin-destionation data: jittering, routing, and visualisation"
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->

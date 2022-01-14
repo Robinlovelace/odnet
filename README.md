@@ -1,6 +1,5 @@
-Disaggregating origin-destination data: methods, implementations, and
-optimal parameters for generating accurate route networks for
-sustainable transport planning
+Assessing methods for generating route networks from origin-destionation
+data: jittering, routing, and visualisation
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -79,17 +78,19 @@ transport system in Edinburgh (see Figure
     [`road_network_ed.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 
 A non-geographic OD dataset representing trips between the zones was
-also generated and saved as a [.csv
+also generated from the UK National travel survey 2011 data and saved as
+a [.csv
 file](https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_iz_ed.csv),
 the first three elements of which are presented in the table below.
 
-| geo_code1 | geo_code2 | all | from_home | train | bus | car_driver | car_passenger | bicycle | foot | other |
-|:----------|:----------|----:|----------:|------:|----:|-----------:|--------------:|--------:|-----:|------:|
-| S02001576 | S02001576 | 151 |         0 |     0 |   6 |         61 |             7 |       5 |   70 |     2 |
-| S02001576 | S02001577 | 132 |         0 |     0 |  11 |         84 |            10 |      11 |   15 |     1 |
-| S02001576 | S02001578 |  40 |         0 |     0 |   5 |         32 |             2 |       0 |    1 |     0 |
+| geo_code1 | geo_code2 | all | train | bus | car_driver | car_passenger | bicycle | foot |
+|:----------|:----------|----:|------:|----:|-----------:|--------------:|--------:|-----:|
+| S02001576 | S02001576 | 151 |     0 |   6 |         61 |             7 |       5 |   70 |
+| S02001576 | S02001577 | 132 |     0 |  11 |         84 |            10 |      11 |   15 |
+| S02001576 | S02001578 |  40 |     0 |   5 |         32 |             2 |       0 |    1 |
 
-Table 2.1: Sample of three rows from the OD dataset used in this paper.
+Table 2.1: Sample of three rows from the OD dataset used in this paper
+(from home and other modes not shown).
 
 ![Figure 2.1: Overview of the study area and the input geographic
 datasets. Dot size is proportional to mean cycle count at counter
@@ -143,12 +144,24 @@ cargo install --git https://github.com/dabreegster/odjitter
 
 Generate jittered OD pairs with a `max-per-od` value of 50 as follows:
 
+``` bash
+odjitter --od-csv-path od_iz_ed.csv \
+  --zones-path iz_zones11_ed.geojson \
+  --subpoints-path road_network_ed.geojson \
+  --max-per-od 50 --output-path output_max50.geojson
+```
+
 Try running it with a different `max-per-od` value (10 in the command
 below):
 
-    #> [1] 3367
+``` bash
+odjitter --od-csv-path od_iz_ed.csv \
+  --zones-path iz_zones11_ed.geojson \
+  --subpoints-path road_network_ed.geojson \
+  --max-per-od 10 --output-path output_max50.geojson
+```
 
-Generate results for top 500, run once:
+<!-- Generate results for top 500, run once: -->
 
 # 3 Findings
 
@@ -160,23 +173,46 @@ different values set for `max-per-od`.
 
 <!-- Todo: update the above figure with more variations and show resulting route networks below -->
 <!-- Todo: present results comparing flow from counter data with route network results -->
-
 # 4 Discussion
 
-The approach is not without limitations. <!-- Todo: add limitations -->
+The approach is not without limitations. Despite the variability of
+places where the automatic bicycle counters are located, they are only
+40 in number, which were used to test the method. This validation step
+would benefit from having more cycling counters. It should be noted that
+the OD data in use is from 2011, and that the home work travel patterns
+might not be up to date. <!-- Todo: add limitations -->
 
 # 5 Acknowledgements
 
-Acknowledgement should be made of any funding bodies who have supported
-the work reported in the paper, of those who have given permission for
-their work to be reproduced or of individuals whose particular
-assistance is due recognition. Acknowledge data providers here where
-appropriate.
+This work was supported by ESRC and ADR’s [10DS
+Fellowship](https://www.adruk.org/news-publications/news-blogs/esrc-and-adr-uk-funded-research-fellows-to-work-with-no10-downing-street-487/)
+funding, and the Alan Turing Institute.
+
+This research was supported by the Portuguese Foundation for Science and
+Technology (FCT) with the the PARSUK Portugal-UK Bilateral Research
+Fund.
 
 # 6 Biography
 
-All contributing authors should include a biography of no more than 50
-words each outlining their career stage and research interests.
+<!-- All contributing authors should include a biography of no more than 50 -->
+<!-- words each outlining their career stage and research interests. -->
+
+Robin is an Associate Professor of Transport Data Science working at the
+University of Leeds’ Institute for Transport Studies (ITS) and Leeds
+Institute for Data Analytics (LIDA). Robin is undertaking a fellowship
+to support evidence-based decision making in central government in
+collaboration with the No. 10 Data Science Team and is an Alan Turing
+Fellow, specialising in transport modelling, geocomputation and data
+driven tools for evidence-based decision making to support policy
+objectives including uptake of active travel to maximise health,
+wellbeing and equity outcomes, and rapid decarbonisation of local, city,
+regional and national transport systems.
+
+Rosa is an urban cycling and active mobility researcher at Instituto
+Superior Técnico - University of Lisbon, and a PhD in Transportation
+Systems in the MIT Portugal program. Rosa is interested in GIS for
+transportation, and has been working on cycling uptake in low cycling
+maturity cities, and socioeconomic impacts of shared mobility.
 
 Dustin is a software engineer at the Alan Turing Institute, where he’s
 creating an ecosystem of interoperable digital twins to study urban

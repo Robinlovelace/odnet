@@ -28,21 +28,18 @@ and Siddharthan 1981). Typically, OD datasets are represented
 all trips shown as departing from and arriving to a single centroid per
 zone, for convenience, simplicity and (historically) to reduce
 computational requirements. This approach, illustrated in Figure
-<a href="#fig:od1">1.1</a> below, has formed the basis of many
-visualisations and research projects using OD data (e.g. Rae 2009;
-Calabrese et al. 2011).
+<a href="#fig:od1"><strong>??</strong></a> below, has formed the basis
+of many visualisations and research projects using OD data (e.g. Rae
+2009; Calabrese et al. 2011).
 
-![Figure 1.1: Illustration of typicall representation of OD dataset,
-illustrating travel to work patterns in England. Source: author’s
-[analysis](https://github.com/creds2/od-data) of open access data from
-the 2011 Census.](overview_map1.png)
+<img src="overview_map1.png" title="Illustration of typicall representation of OD dataset, illustrating travel to work patterns in England. Source: author's [analysis](https://github.com/creds2/od-data) of open access data from the 2011 Census." alt="Illustration of typicall representation of OD dataset, illustrating travel to work patterns in England. Source: author's [analysis](https://github.com/creds2/od-data) of open access data from the 2011 Census." width="80%" />
 
 Connecting zones with straight lines in this way has advantages: it can
 provide a quick summary of the movement patterns between zones,
 particularly when attributes such as total number of trips and the
 percentage of trips made by a particular mode are represented by
 variable aesthetics such as line width and colour, as illustrated in
-Figure <a href="#fig:od1">1.1</a>.
+Figure <a href="#fig:od1"><strong>??</strong></a>.
 
 However, the approach has limitations, including:
 
@@ -75,11 +72,11 @@ transport system in Edinburgh (see Figure
 <a href="#fig:overview">2.1</a>):
 
 -   Open access cycle counter data, stored in
-    [`cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
+    [`cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 -   Open zones data, stored in
     [`iz_zones11_ed`](https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson)
 -   Open road network data from OSM, stored as
-    [`road_network_ed.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
+    [`road_network_ed.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 
 A non-geographic OD dataset representing trips between the zones was
 also generated and saved as a [.csv
@@ -130,34 +127,43 @@ roughly descending order of frequency of mentions in the literature:
 <!-- ```{bash} -->
 <!-- head -6 data/road_network.geojson -->
 <!-- ``` -->
-<!-- The `jitter` function requires you to set the maximum number of trips for all trips in the jittered result. -->
-<!-- A value of 1 will create a line for every trip in the dataset, a value above the maximum number of trips in the 'all' column in the OD ata will result in a jittered dataset that has the same number of desire lines (the geographic representation of OD pairs) as in the input (50 in this case). -->
-<!-- With reference to the test data in this repo, you can run the `jitter` command line tool as follows: -->
-<!-- ```{bash} -->
-<!-- odjitter --od-csv-path data/od.csv \ -->
-<!--   --zones-path data/zones.geojson \ -->
-<!--   --subpoints-path data/road_network.geojson \ -->
-<!--   --max-per-od 50 --output-path output_max50.geojson -->
-<!-- ``` -->
-<!-- Try running it with a different `max-per-od` value (10 in the command below): -->
-<!-- ```{bash} -->
-<!-- odjitter --od-csv-path data/od.csv \ -->
-<!--   --zones-path data/zones.geojson \ -->
-<!--   --subpoints-path data/road_network.geojson \ -->
-<!--   --max-per-od 10 --output-path output_max10.geojson -->
-<!-- ``` -->
+
+The jittering process was undertaken with the Rust crate `odjitter`,
+which can be replicated using the following reproducible code run from a
+system terminal such as Bash on Linux, PowerShell on Windows or the Mac
+Terminal
+([Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+must be installed for this to work).
+
+First install the `odjitter` Rust crate and command line tool:
+
+``` bash
+cargo install --git https://github.com/dabreegster/odjitter
+```
+
+Generate jittered OD pairs with a `max-per-od` value of 50 as follows:
+
+Try running it with a different `max-per-od` value (10 in the command
+below):
+
+    #> [1] 3367
+
+Generate results for top 500, run once:
 
 # 3 Findings
 
 Figure <a href="#fig:output1"><strong>??</strong></a> shows the output
-of the `jitter` commands above visually, with the .
+of the `jitter` commands above visually, with/without jittering and with
+different values set for `max-per-od`.
 
-<img src="README_files/figure-gfm/output1-1.png" title="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" alt="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" width="30%" /><img src="README_files/figure-gfm/output1-2.png" title="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" alt="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" width="30%" /><img src="README_files/figure-gfm/output1-3.png" title="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" alt="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10" width="30%" />
+<img src="README_files/figure-gfm/output1-1.png" title="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." alt="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." width="50%" /><img src="README_files/figure-gfm/output1-2.png" title="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." alt="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." width="50%" /><img src="README_files/figure-gfm/output1-3.png" title="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." alt="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." width="50%" /><img src="README_files/figure-gfm/output1-4.png" title="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." alt="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." width="50%" />
 
 <!-- Todo: update the above figure with more variations and show resulting route networks below -->
 <!-- Todo: present results comparing flow from counter data with route network results -->
 
 # 4 Discussion
+
+The approach is not without limitations. <!-- Todo: add limitations -->
 
 # 5 Acknowledgements
 

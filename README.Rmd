@@ -49,7 +49,7 @@ Because of these easy-to-use characteristics, OD datasets have long been used to
 Typically, OD datasets are represented *geographically* as straight 'desire lines' between zone centroids, with all trips shown as departing from and arriving to a single centroid per zone, for convenience, simplicity and (historically) to reduce computational requirements.
 This approach, illustrated in Figure \@ref(fig:od1) below, has formed the basis of many visualisations and research projects using OD data [e.g. @rae_spatial_2009; @calabrese_estimating_2011].
 
-```{r od1, fig.cap="Illustration of typicall representation of OD dataset, illustrating travel to work patterns in England. Source: author's [analysis](https://github.com/creds2/od-data) of open access data from the 2011 Census."}
+```{r od1, fig.cap="Illustration of typicall representation of OD dataset, illustrating travel to work patterns in England. Source: author's [analysis](https://github.com/creds2/od-data) of open access data from the 2011 Census.", out.width="80%"}
 # system("wget https://github.com/creds2/od-data/blob/master/overview_map1.png") # failed
 # file.copy("~/orgs/creds2/od-data/overview_map1.png", ".")
 
@@ -76,19 +76,31 @@ The aim is to not only create informative visualisations but also to generate ac
 
 The geographic input datasets on which the analysis presented in this paper build are cleaned versions of open datasets representing the transport system in Edinburgh (see Figure \@ref(fig:overview)):
 
-- Open access cycle counter data, stored in [`cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
+- Open access cycle counter data, stored in [`cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 - Open zones data, stored in [`iz_zones11_ed`](https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson)
-- Open road network data from OSM, stored as [`road_network_ed.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson)
+- Open road network data from OSM, stored as [`road_network_ed.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 
 A non-geographic OD dataset representing trips between the zones was also generated and saved as a [.csv file](https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_iz_ed.csv), the first three elements of which are presented in the table below.
 
+```{r}
+# download data
+if(!file.exists("https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson")) {
+system("wget https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson")
+system("wget https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_iz_ed.csv")
+system("wget https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson")
+system("wget https://github.com/Robinlovelace/odnet/releases/download/0/road_network_ed.geojson")
+}
+```
+
+
 
 ```{r}
-counters = sf::read_sf("https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_59_edinburgh_summary_2020-03-02-2022-01-05.geojson")
+counters = sf::read_sf("https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson")
 od = readr::read_csv("https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_iz_ed.csv")
 zones = sf::read_sf("https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson")
 centroids = sf::read_sf("https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_centroids11_ed.geojson")
-road_network = readRDS("~/papers/odjitter/road_network.Rds")
+network = sf::read_sf("network.geojson")
+desire_lines = od::od_to_sf(od, zones)
 # sf::write_sf(road_network, "road_network_ed.geojson")
 # piggyback::pb_upload("road_network_ed.geojson")
 ```
@@ -103,7 +115,7 @@ od %>%
 ```{r overview, fig.cap="Overview of the study area and the input geographic datasets. Dot size is proportional to mean cycle count at counter locations."}
 tm_shape(zones) +
   tm_borders(alpha = 0.5) +
-  tm_shape(road_network) +
+  tm_shape(road_network %>% sample_n(1000)) +
   tm_lines(col = "red", lwd = 0.2) +
   tm_shape(counters, size = 2) +
   tm_dots(size = "mean_count", size.lim = c(100, 1000))
@@ -136,43 +148,82 @@ The following parameters were adjusted to explore their importance, in roughly d
 <!-- head -6 data/road_network.geojson -->
 <!-- ``` -->
 
-<!-- The `jitter` function requires you to set the maximum number of trips for all trips in the jittered result. -->
-<!-- A value of 1 will create a line for every trip in the dataset, a value above the maximum number of trips in the 'all' column in the OD ata will result in a jittered dataset that has the same number of desire lines (the geographic representation of OD pairs) as in the input (50 in this case). -->
+The jittering process was undertaken with the Rust crate `odjitter`, which can be replicated using the following reproducible code run from a system terminal such as Bash on Linux, PowerShell on Windows or the Mac Terminal ([Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) must be installed for this to work).
 
-<!-- With reference to the test data in this repo, you can run the `jitter` command line tool as follows: -->
+First install the `odjitter` Rust crate and command line tool:
 
-<!-- ```{bash} -->
-<!-- odjitter --od-csv-path data/od.csv \ -->
-<!--   --zones-path data/zones.geojson \ -->
-<!--   --subpoints-path data/road_network.geojson \ -->
-<!--   --max-per-od 50 --output-path output_max50.geojson -->
-<!-- ``` -->
+```bash
+cargo install --git https://github.com/dabreegster/odjitter
+```
 
-<!-- Try running it with a different `max-per-od` value (10 in the command below): -->
+Generate jittered OD pairs with a `max-per-od` value of 50 as follows:
 
-<!-- ```{bash} -->
-<!-- odjitter --od-csv-path data/od.csv \ -->
-<!--   --zones-path data/zones.geojson \ -->
-<!--   --subpoints-path data/road_network.geojson \ -->
-<!--   --max-per-od 10 --output-path output_max10.geojson -->
-<!-- ``` -->
+```{bash, eval=FALSE}
+odjitter --od-csv-path od_iz_ed.csv \
+  --zones-path iz_zones11_ed.geojson \
+  --subpoints-path road_network_ed.geojson \
+  --max-per-od 50 --output-path output_max50.geojson
+```
+
+Try running it with a different `max-per-od` value (10 in the command below):
+
+```{bash, eval=FALSE}
+odjitter --od-csv-path od_iz_ed.csv \
+  --zones-path iz_zones11_ed.geojson \
+  --subpoints-path road_network_ed.geojson \
+  --max-per-od 10 --output-path output_max50.geojson
+```
+
+```{r}
+desire_lines = od::od_to_sf(od, zones)
+sum(desire_lines$bicycle > 0) # 3367 
+desire_lines_top = desire_lines %>% 
+  top_n(n = 500, wt = bicycle)
+# write_csv(desire_lines_top %>% sf::st_drop_geometry(), "od_top.csv")
+# piggyback::pb_upload("od_top.csv")
+```
+
+
+Generate results for top 500, run once:
+
+```{bash, eval=FALSE}
+odjitter --od-csv-path od_top.csv \
+  --zones-path iz_zones11_ed.geojson \
+  --subpoints-path road_network_ed.geojson \
+  --max-per-od 1000 --output-path output_max10k.geojson
+odjitter --od-csv-path od_top.csv \
+  --zones-path iz_zones11_ed.geojson \
+  --subpoints-path road_network_ed.geojson \
+  --max-per-od 50 --output-path output_max50.geojson
+odjitter --od-csv-path od_top.csv \
+  --zones-path iz_zones11_ed.geojson \
+  --subpoints-path road_network_ed.geojson \
+  --max-per-od 10 --output-path output_max10.geojson
+```
+
 
 # Findings
 
-Figure \@ref(fig:output1) shows the output of the `jitter` commands above visually, with the .
+Figure \@ref(fig:output1) shows the output of the `jitter` commands above visually, with/without jittering and with different values set for `max-per-od`.
 
-```{r output1, echo=FALSE, fig.show='hold', out.width="30%", message=FALSE, fig.cap="Results at the desire line level. The left image showing unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones), the central image showing the result after setting `max-per-od` argument to 50, and the right hand figure showing the result after setting `max-per-od` to 10"}
-zones = sf::read_sf("data/zones.geojson")
-network = sf::read_sf("data/road_network.geojson")
-od_sf = od::od_to_sf(od, zones)
+```{r output1, echo=FALSE, fig.show='hold', out.width="50%", message=FALSE, fig.cap="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10."}
+network = sf::read_sf("network.geojson")
 plot(zones$geometry, border = "grey")
-plot(network$geometry, col = "red", add = TRUE)
-plot(od_sf$geometry, add = TRUE)
+sel_net = sample(nrow(network), 1000)
+plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
+plot(desire_lines_top$geometry, add = TRUE)
+
 plot(zones$geometry, border = "grey")
-plot(network$geometry, col = "red", add = TRUE)
+sel_net = sample(nrow(network), 1000)
+plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
+plot(sf::read_sf("output_max10k.geojson")$geometry, add = TRUE)
+
+plot(zones$geometry, border = "grey")
+plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
 plot(sf::read_sf("output_max50.geojson")$geometry, add = TRUE)
+
 plot(zones$geometry, border = "grey")
-plot(network$geometry, col = "red", add = TRUE)
+plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
 plot(sf::read_sf("output_max10.geojson")$geometry, add = TRUE)
 ```
 
@@ -180,8 +231,28 @@ plot(sf::read_sf("output_max10.geojson")$geometry, add = TRUE)
 
 <!-- Todo: present results comparing flow from counter data with route network results -->
 
+```{r, eval=FALSE}
+library(sf)
+library(stplanr)
+library(cyclestreets)
+# routing test
+
+routes_fast_top = route(l = desire_lines_top, route_fun = journey)
+qtm(routes_fast_top %>% sample_n(1000))
+nrow(routes_fast_top)
+rnet_fast = overline(routes_fast_top, "bicycle")
+tm_shape(rnet_fast) +
+  tm_lines(lwd = "bicycle")
+counters_joined = sf::st_join(counters, rnet_fast, join = st_nearest_feature)
+cor(counters_joined$mean_count, counters_joined$bicycle)
+```
+
+
 # Discussion
 
+
+The approach is not without limitations.
+<!-- Todo: add limitations -->
 
 Acknowledgements
 ================

@@ -44,3 +44,4 @@ odjitter-main/
 *.html
 data/
 *.geojson
+*.csv

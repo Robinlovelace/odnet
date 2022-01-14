@@ -237,7 +237,7 @@ plot(sf::read_sf("output_max10.geojson")$geometry, add = TRUE)
 
 ```{r}
 # list.files(pattern = "output")
-network_filenames = c("desire_lines_top.geojson", "output_max10k.geojson", "output_max10.geojson", "output_max50.geojson")
+network_filenames = c("desire_lines_top.geojson", "output_max10k.geojson", "output_max50.geojson", "output_max10.geojson")
 names(network_filenames) = c("Centroid-based", "Jittered (no disaggregation)", "Jittered (50 trips max)", "Jittered (10 trips max)")
 ```
 
@@ -246,15 +246,18 @@ names(network_filenames) = c("Centroid-based", "Jittered (no disaggregation)", "
 # routing
 library(cyclestreets)
 i = network_filenames[1]
-for(i in network_filenames[2:4]) {
+for(i in network_filenames) {
   message("Getting routes for ", i)
   desire_lines_i = sf::read_sf(i)
   message("There are ", nrow(desire_lines_i), " desire lines with ", sum(desire_lines_i$bicycle), " trips")
-  routes_fast_top = route(l = desire_lines_top, route_fun = journey)
-  f_rnet = paste0("rnet_", i)
-  sf::write_sf(routes_fast_top, f_rnet)
-  piggyback::pb_upload(f_rnet)
-  piggyback::pb_download_url(f_rnet)
+  system.time({
+  routes_fast_top = route(l = desire_lines_i, route_fun = journey)
+  })
+  r_routes = paste0("routes_", i)
+  file.remove(r_routes)
+  sf::write_sf(routes_fast_top, r_routes)
+  piggyback::pb_upload(r_routes)
+  piggyback::pb_download_url(r_routes)
 }
 ```
 
@@ -262,17 +265,30 @@ The route network level results associated with the same OD pairs are shown in F
 
 
 ```{r rnets, fig.cap="Route network results."}
-u1 = "https://github.com/Robinlovelace/odnet/releases/download/0/routes_fast_top.geojson"
-f1 = basename(u1)
-if(!file.exists(f1)) download.file(u1, f1)
-routes_fast_top = sf::read_sf(f1)
-# qtm(routes_fast_top %>% sample_n(1000))
-# nrow(routes_fast_top)
-rnet_fast = overline(routes_fast_top, "bicycle")
-tm_shape(rnet_fast) +
-  tm_lines(lwd = "bicycle", scale = 4) 
-counters_joined = sf::st_join(counters, rnet_fast, join = sf::st_nearest_feature)
-# cor(counters_joined$mean_count, counters_joined$bicycle)
+# u1 = "https://github.com/Robinlovelace/odnet/releases/download/0/routes_fast_top.geojson"
+# f1 = basename(u1)
+# if(!file.exists(f1)) download.file(u1, f1)
+routes_names = paste0("routes_", network_filenames)
+i = routes_names[1]
+d = data.frame(route_file_names = routes_names)
+d$network_type = names(network_filenames)
+d$r_sqaured = NA
+j = 1
+rnet_list = lapply(1:length(routes_names), function(j) {
+  i = routes_names[j]
+  message(i)
+  routes = sf::read_sf(i)
+  rnet_fast = overline(routes, "bicycle")
+  counters_joined = sf::st_join(counters, rnet_fast, join = sf::st_nearest_feature)
+  cor = cor(counters_joined$mean_count, counters_joined$bicycle)^2
+  message("R-squared for ", i, " is ", cor)
+  d$r_sqaured[j] = cor
+  tm_shape(rnet_fast) +
+    tm_lines(lwd = "bicycle", scale = 4, lwd.legend = c(100, 500)) +
+    tm_credits(text = paste0("R-Squared counter-network fit: ", round(cor, 2)), size = 5) +
+    tm_layout(title = d$network_type[j])
+})
+tmap_arrange(rnet_list[[1]], rnet_list[[2]], rnet_list[[3]], rnet_list[[4]])
 ```
 
 \pagebreak

@@ -259,11 +259,8 @@ The approach is not without limitations.
 Acknowledgements
 ================
 
-Acknowledgement should be made of any funding bodies who have supported
-the work reported in the paper, of those who have given permission for
-their work to be reproduced or of individuals whose particular
-assistance is due recognition. Acknowledge data providers here where
-appropriate.
+This work was supported by ESRC and ADR's [10DS Fellowship](https://www.adruk.org/news-publications/news-blogs/esrc-and-adr-uk-funded-research-fellows-to-work-with-no10-downing-street-487/) funding, and the Alan Turing Institute.
+<!-- Todo: add more, the Portugal/UK fund Rosa? -->
 
 Biography
 =========

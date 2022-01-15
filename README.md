@@ -15,10 +15,13 @@ geographic entities. Because of their ability to encode a large amount
 of information about millions of trips in a relatively small amount of
 storage space, with the maximum number of rows in an aggregate OD
 dataset equal to square of the number of zones squared, including
-intra-zonal OD pairs. Thus, the entire transport system of London can be
-represented, albeit simplistically, as an OD dataset representing
-movement between the city’s 33 boroughs with only 33^2 (1089) rows and a
-number of columns depending on the number of trip types.
+intra-zonal OD pairs. Thus, the entire transport system of city the size
+of Edinburgh, with a population just over 500,000 people, can be
+represented at the level of desire lines between the city’s 111
+enumeration districts
+([EDs](https://www.ons.gov.uk/methodology/geography/ukgeographies/censusgeography))
+with 111^2 (12,321) rows and a number of columns depending on the number
+of trip types.[^2]
 
 Because of these easy-to-use characteristics, OD datasets have long been
 used to describe aggregate urban mobility patterns (Carey, Hendrickson,
@@ -313,3 +316,14 @@ Origin-Destination Data Visualization.” *Computer Graphics Forum* 40
 </div>
 
 [^1]: <https://www.ons.gov.uk/census/2011census/2011censusdata/originanddestinationdata>
+
+[^2]:  In practice, not all combinations of OD pairs have trips between
+    them, so the square of the number of zones is an upper limit. The
+    number of rows of data in the input OD dataset we use in this paper
+    has 10,394 rows, 16% fewer than the maximum that could be
+    represented by trips between every combination of zones. The .csv
+    file associated with this dataset representing the transport system
+    in Edinburgh (albeit only for work and representing only single
+    stage trips in one direction) is only 0.3 MB, a compact way of
+    storing information on travel behaviour compared with alternatives
+    such as large GPS datasets.

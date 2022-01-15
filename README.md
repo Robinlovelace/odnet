@@ -103,17 +103,11 @@ locations.](README_files/figure-gfm/overview-1.png)
 
 To test the performance of different parameters and settings for the
 OD-to-route-network conversion process, we focussed only on cycling
-trips as these were measured in the counter dataset mentioned. The
-following parameters were adjusted to explore their importance, in
-roughly descending order of frequency of mentions in the literature:
-
-1.  The routing profile used, which can ‘prefer’ differet route types,
-    resulting in ‘quiet’ to ‘fast’ networks (Desjardins et al. 2021)
-2.  The level of disaggregation, ranging from none to full
-    disaggregation (on desire line and route per trip) (Jafari et al.
-    2015)
-3.  Jittering strategy used to sample origin and destination points
-    within zones (Lovelace, Félix, and Carlino 2022)
+trips as these were measured in the counter dataset mentioned.
+Furthermore, we focussed on only the desire lines representing 4 or more
+cycle trips, to reduce the computational requirements of the study in
+the time available: this reduced the number of desire lines from over
+10,000 to 685.
 
 <!-- To run algorithm you need a minimum of three inputs, examples of which are provided in the `data/` folder of this repo: -->
 <!-- 1. A .csv file containing OD data with two columns containing zone IDs (specified with  `--origin-key=geo_code1 --destination-key=geo_code2` by default) and other columns representing trip counts: -->
@@ -170,9 +164,25 @@ odjitter --od-csv-path od_iz_ed.csv \
 
 # 3 Findings
 
-Figure <a href="#fig:output1">3.1</a> shows the output of the `jitter`
-commands above visually, with/without jittering and with different
-values set for `max-per-od`.
+Figure <a href="#fig:output1">3.1</a> shows the output of the jittering
+process described in (Lovelace, Félix, and Carlino 2022) and implemented
+with the `jitter` commands above visually. The facets a to d show the
+impacts of jittering with different values set for the maximum number of
+trips allowable per ‘jittered desire line’, and implemented with the
+argument `max-per-od` in the previous section. It is clear that even
+jittering without disaggregation has a substantial impact: Figure
+<a href="#fig:output1">3.1</a> b) represents the same number of desire
+lines but with widely distributed start and end points.
+
+The maps in Figure <a href="#fig:output1">3.1</a> c) and d) show the
+impact of reducing the threshold for the number of trips allowed:
+although every facet represents the same number of travel, the trips are
+represented with around double the number of desire lines in c) and
+triple the number of desire lines in d) compared with the original OD
+dataset. To assess whether this process of disaggregation/jittering adds
+value to the OD data, we generated results at the route network level
+and evaluated them with reference to the cycle counter dataset outlined
+in the previous section.
 
 ![Figure 3.1: Results at the desire line level. The top left image shows
 unjittered results with origins and destinations going to zone centroids
@@ -186,19 +196,72 @@ result result with a maximum number of trips per jittered OD pair of
 <!-- Todo: present results comparing flow from counter data with route network results -->
 
 The route network level results associated with the same OD pairs are
-shown in Figure <a href="#fig:rnets">3.2</a>.
+shown in Figure <a href="#fig:rnets">3.2</a>. The results suggest that
+jittering improve network accuracy compared with a ground truth dataset,
+even without first disaggregating the input OD datasets. A notable
+finding, albeit from a small ‘ground truth’ dataset, is that jittering
+can improve route network resutls *at no no extra computational cost* in
+terms of routing, often the most time-consuming aspect of transport
+modelling workflows: networks shown in Figure
+<a href="#fig:rnets">3.2</a> a) and b) both result from calculating
+routes associated with 685 desire lines, but b) shows a more diffuse
+network. Furthermore, the results suggest that disaggregation is worth
+extra computational costs associated with routing for more desire lines,
+with R-Squared results quantifying the relationship between observed
+daily counts and the level of flow in the nearest segment on route
+improving with further disaggregation.
 
 ![Figure 3.2: Route network
 results.](README_files/figure-gfm/rnets-1.png)
 
 # 4 Discussion
 
+The results presented above support the hypothesis that ‘jittering’
+techniques outlined in (Lovelace, Félix, and Carlino 2022) can add value
+to OD data. The process of randomising start and end points to vertices
+on a transport network, combined with variable levels of disaggregation
+— the process of splitting single OD pairs into multiple desire lines
+based on a threshold value for the maximum number of trips that can be
+represented in a single jittered desire line — clearly leads to more
+diffuse networks. The progressive improvements in network-counter fit
+are encouraging, although we note that the best fit implies that only 6%
+of the variability on daily average count datasets can be explained by
+route network level results. Thus, the results should be seen more as a
+proof-of-concept highlighting the *potential* value of jittering when
+converting OD datasets to route networks, rather than definitive
+findings.
+
 The approach is not without limitations. Despite the variability of
 places where the automatic bicycle counters are located, they are only
-40 in number, which were used to test the method. This validation step
-would benefit from having more cycling counters. It should be noted that
-the OD data in use is from 2011, and that the home work travel patterns
-might not be up to date. <!-- Todo: add limitations -->
+40 in number, which were used to test the method. It should also be
+noted that the OD data is from 2011, while the counter datasets are from
+10 years later and represents cycle trips for all purposes, not just
+travel to work. These limitations help explain the poor counter-network
+results and, more importantly, suggest ways to gain further
+understanding of ways to improve network generation processes. Promising
+avenues of future research could include:
+
+1.  Exploring the impact of other parameters in the OD to route network
+    generation process, including:
+2.  The routing profile used, which can ‘prefer’ different route types,
+    resulting in ‘quiet’ to ‘fast’ networks (Desjardins et al. 2021)
+3.  Further disaggregation levels, including full disaggregation (one
+    desire line and route per trip) and generation of ‘centroid
+    connectors’ (Jafari et al. 2015; Friedrich and Galster 2009)
+4.  Testing different jittering strategies used to sample origin and
+    destination points within zones, such as using open building
+    datasets to generate start and end points (Lovelace, Félix, and
+    Carlino 2022)
+5.  Repeating the tests outlined in this paper but with larger and
+    richer input datasets
+
+We believe that pursuing such lines of inquiry should be a priority for
+sustainable transport planning. New insights could lead to improved
+evidence on which to develop investment strategies, such as route
+networks presenting estimates of baseline levels, and potential uptake,
+of sustainable transport modes, improving on route network results
+derived from ‘centroid-based’ desire lines (e.g. Goodman et al. 2019;
+Lovelace et al. 2017; Biba, Curtin, and Manca 2010).[^3]
 
 # 5 Acknowledgements
 
@@ -242,6 +305,15 @@ proponent of open source code and the Rust programming language.
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
+<div id="ref-biba_new_2010" class="csl-entry">
+
+Biba, S., K. M. Curtin, and G. Manca. 2010. “A New Method for
+Determining the Population with Walking Access to Transit.”
+*International Journal of Geographical Information Science* 24 (3):
+347–64. <https://doi.org/10.1080/13658810802646679>.
+
+</div>
+
 <div id="ref-calabrese_estimating_2011" class="csl-entry">
 
 Calabrese, Francesco, Giusy Di Lorenzo, Liang Liu, and Carlo Ratti.
@@ -269,6 +341,25 @@ Ontario: Fastest, Quietest, or Balanced Routes?” *Transportation*, June.
 
 </div>
 
+<div id="ref-friedrich_methods_2009" class="csl-entry">
+
+Friedrich, Markus, and Manuel Galster. 2009. “Methods for Generating
+Connectors in Transport Planning Models.” *Transportation Research
+Record* 2132 (1): 133–42. <https://doi.org/10.3141/2132-15>.
+
+</div>
+
+<div id="ref-goodman_scenarios_2019" class="csl-entry">
+
+Goodman, Anna, Ilan Fridman Rojas, James Woodcock, Rachel Aldred,
+Nikolai Berkoff, Malcolm Morgan, Ali Abbas, and Robin Lovelace. 2019.
+“Scenarios of Cycling to School in England, and Associated Health and
+Carbon Impacts: Application of the ‘Propensity to Cycle Tool’.” *Journal
+of Transport & Health* 12 (March): 263–78.
+<https://doi.org/10.1016/j.jth.2019.01.008>.
+
+</div>
+
 <div id="ref-jafari_investigation_2015" class="csl-entry">
 
 Jafari, Ehsan, Mason D. Gemar, Natalia Ruiz Juri, and Jennifer Duthie.
@@ -285,6 +376,15 @@ Lovelace, Robin, Rosa Félix, and Dustin Carlino. 2022. “Jittering: A
 Computationally Efficient Method for Generating Realistic Route Networks
 from Origin-Destination Data,” January.
 <https://doi.org/10.31219/osf.io/qux6g>.
+
+</div>
+
+<div id="ref-lovelace_propensity_2017" class="csl-entry">
+
+Lovelace, Robin, Anna Goodman, Rachel Aldred, Nikolai Berkoff, Ali
+Abbas, and James Woodcock. 2017. “The Propensity to Cycle Tool: An Open
+Source Online System for Sustainable Transport Planning.” *Journal of
+Transport and Land Use* 10 (1). <https://doi.org/10.5198/jtlu.2016.862>.
 
 </div>
 
@@ -329,3 +429,9 @@ Origin-Destination Data Visualization.” *Computer Graphics Forum* 40
     stage trips in one direction) is only 0.3 MB, a compact way of
     storing information on travel behaviour compared with alternatives
     such as large GPS datasets.
+
+[^3]:  See the Technical Note produced by consultancy PJA for
+    Staffordshire’s Local Cycling and Walking Infrastructure Plan for a
+    good example o the use of centroid-based desire lines for routing in
+    practice:
+    <https://www.staffordshire.gov.uk/Transport/transportplanning/documents/Appendix-B-PJA-GIS-Analysis-Technical-Note.pdf>

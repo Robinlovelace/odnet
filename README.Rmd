@@ -210,83 +210,42 @@ odjitter --od-csv-path od_top.csv \
 
 Figure \@ref(fig:output1) shows the output of the `jitter` commands above visually, with/without jittering and with different values set for `max-per-od`.
 
-```{r output1, echo=FALSE, fig.show='hold', out.width="50%", message=FALSE, fig.cap="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10."}
-network = sf::read_sf("network.geojson")
-plot(zones$geometry, border = "grey")
-sel_net = sample(nrow(network), 1000)
-plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
-plot(desire_lines_top$geometry, add = TRUE)
-
-plot(zones$geometry, border = "grey")
-sel_net = sample(nrow(network), 1000)
-plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
-plot(sf::read_sf("output_max10k.geojson")$geometry, add = TRUE)
-
-plot(zones$geometry, border = "grey")
-plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
-plot(sf::read_sf("output_max50.geojson")$geometry, add = TRUE)
-
-plot(zones$geometry, border = "grey")
-plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
-plot(sf::read_sf("output_max10.geojson")$geometry, add = TRUE)
-
-# Replicating in ggplot2 -- benefits in that can more easily
-# play with visual parameters add titles etc. than baseR.
-# Also can extend in various ways (using different line primitives etc.)
-library(sf)
-library(patchwork)
-# network = sf::read_sf("network.geojson")
-# plot(zones$geometry, border = "grey")
-# sel_net = sample(nrow(network), 1000)
-# plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
-# plot(desire_lines_top$geometry, add = TRUE)
-sel_net = sample(nrow(network), 1000)
-theme_set(theme_void())
-p1 <- ggplot() +
-  geom_sf(data=zones, size=.1, alpha=.3) +
-  geom_sf(data=network$geometry[sel_net], colour="#67000d", size=.1)+
-  geom_sf(data=desire_lines$geometry[sel_net], alpha=.2, size=.7)+
-  coord_sf(crs=st_crs(zones), datum=NA)+
-  ggtitle("title here")
-  
-#plot(zones$geometry, border = "grey")
-sel_net = sample(nrow(network), 1000)
-# plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
-# plot(sf::read_sf("output_max10k.geojson")$geometry, add = TRUE)
-p2 <- ggplot() +
-  geom_sf(data=zones, size=.1, alpha=.3) +
-  geom_sf(data=network$geometry[sel_net], colour="#67000d", size=.1)+
-  geom_sf(data=read_sf("output_max10k.geojson"), alpha=.2, size=.7)+
-  coord_sf(crs=st_crs(zones), datum=NA)+
-  ggtitle("title here")
-
-p3 <- ggplot() +
-  geom_sf(data=zones, size=.1, alpha=.3) +
-  geom_sf(data=network$geometry[sel_net], colour="#67000d", size=.1)+
-  geom_sf(data=read_sf("output_max50k.geojson"), alpha=.2, size=.7)+
-  coord_sf(crs=st_crs(zones), datum=NA)+
-  ggtitle("title here")
-
-p3 <- ggplot() +
-  geom_sf(data=zones, size=.1, alpha=.3) +
-  geom_sf(data=network$geometry[sel_net], colour="#67000d", size=.1)+
-  geom_sf(data=read_sf("output_max10k.geojson"), alpha=.2, size=.7)+
-  coord_sf(crs=st_crs(zones), datum=NA)+
-  ggtitle("title here")
-
-plot <- (p1+p2)/(p3+p4)
-```
-
-<!-- Todo: update the above figure with more variations and show resulting route networks below -->
-
-<!-- Todo: present results comparing flow from counter data with route network results -->
-
 ```{r}
 # list.files(pattern = "output")
 network_filenames = c("desire_lines_top.geojson", "output_max10k.geojson", "output_max50.geojson", "output_max10.geojson")
 names(network_filenames) = c("Centroid-based", "Jittered (no disaggregation)", "Jittered (50 trips max)", "Jittered (10 trips max)")
 ```
 
+```{r output1, message=FALSE, fig.cap="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10.", fig.height=6, fig.width=6}
+network = sf::read_sf("network.geojson")
+# Replicating in ggplot2 -- benefits in that can more easily
+# play with visual parameters add titles etc. than baseR.
+# Also can extend in various ways (using different line primitives etc.)
+
+desire_lines_joined = purrr::map_dfr(1:length(network_filenames), function(i) {
+  f = network_filenames[i]
+  message(f)
+  desire_lines = sf::read_sf(f)
+  desire_lines$type = names(network_filenames)[i]
+  desire_lines
+})
+desire_lines_joined = desire_lines_joined %>% 
+  mutate(type_factor = factor(type, levels = names(network_filenames)))
+
+tm_shape(zones, bbox = tmaptools::bb(zones, ext = 0.8)) +
+  tm_borders(alpha = 0.5) +
+  tm_shape(network %>% sample_n(1000)) +
+  tm_lines(col = "red", lwd = 0.2) +
+  tm_shape(desire_lines_joined) +
+  tm_lines(lwd = "bicycle", title.lwd = "Number of trips", lwd.legend = c(10, 50)) +
+  tm_facets(by = "type_factor", free.coords = FALSE) +
+  tm_layout(legend.outside = FALSE)
+
+```
+
+<!-- Todo: update the above figure with more variations and show resulting route networks below -->
+
+<!-- Todo: present results comparing flow from counter data with route network results -->
 
 ```{r, eval=FALSE}
 # routing
@@ -320,11 +279,16 @@ d = data.frame(route_file_names = routes_names)
 d$network_type = names(network_filenames)
 d$r_sqaured = NA
 j = 1
-rnet_list = lapply(1:length(routes_names), function(j) {
-  i = routes_names[j]
+rnet_list = lapply(1:length(routes_names), function(i) {
   message(i)
-  routes = sf::read_sf(i)
+  routes = sf::read_sf(routes_names[i])
   rnet_fast = overline(routes, "bicycle")
+  rnet_fast$type = names(network_filenames)[i]
+  rnet_fast
+})
+rnet_df = dplyr::bind_rows(rnet_list)
+
+map_list = lapply(1:length(routes_names), function(i) {
   counters_joined = sf::st_join(counters, rnet_fast, join = sf::st_nearest_feature)
   cor = cor(counters_joined$mean_count, counters_joined$bicycle)^2
   message("R-squared for ", i, " is ", cor)
@@ -334,6 +298,9 @@ rnet_list = lapply(1:length(routes_names), function(j) {
     tm_credits(text = paste0("R-Squared counter-network fit: ", round(cor, 2)), size = 5) +
     tm_layout(title = d$network_type[j])
 })
+tm_shape(rnet_df) +
+  tm_lines() +
+  tm_facets("type")
 tmap_arrange(rnet_list[[1]], rnet_list[[2]], rnet_list[[3]], rnet_list[[4]])
 ```
 

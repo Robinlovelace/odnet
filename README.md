@@ -165,19 +165,25 @@ odjitter --od-csv-path od_iz_ed.csv \
 
 # 3 Findings
 
-Figure <a href="#fig:output1"><strong>??</strong></a> shows the output
-of the `jitter` commands above visually, with/without jittering and with
-different values set for `max-per-od`.
+Figure <a href="#fig:output1">3.1</a> shows the output of the `jitter`
+commands above visually, with/without jittering and with different
+values set for `max-per-od`.
 
-<img src="README_files/figure-gfm/output1-1.png" title="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." alt="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." width="50%" /><img src="README_files/figure-gfm/output1-2.png" title="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." alt="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." width="50%" /><img src="README_files/figure-gfm/output1-3.png" title="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." alt="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." width="50%" /><img src="README_files/figure-gfm/output1-4.png" title="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." alt="Results at the desire line level. The top left image shows unjittered results with origins and destinations going to zone centroids (as in many if not most visualisations of desire lines between zones). Top right: jittered results without disaggregation. Bottom left: result with a maximum number of trips per jittered OD pair of 50. Bottom right: result result with a maximum number of trips per jittered OD pair of 10." width="50%" />
+![Figure 3.1: Results at the desire line level. The top left image shows
+unjittered results with origins and destinations going to zone centroids
+(as in many if not most visualisations of desire lines between zones).
+Top right: jittered results without disaggregation. Bottom left: result
+with a maximum number of trips per jittered OD pair of 50. Bottom right:
+result result with a maximum number of trips per jittered OD pair of
+10.](README_files/figure-gfm/output1-1.png)
 
 <!-- Todo: update the above figure with more variations and show resulting route networks below -->
 <!-- Todo: present results comparing flow from counter data with route network results -->
 
 The route network level results associated with the same OD pairs are
-shown in Figure <a href="#fig:rnets">3.1</a>.
+shown in Figure <a href="#fig:rnets">3.2</a>.
 
-![Figure 3.1: Route network
+![Figure 3.2: Route network
 results.](README_files/figure-gfm/rnets-1.png)
 
 # 4 Discussion

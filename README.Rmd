@@ -1,11 +1,11 @@
 ---
 # # for rapid prototyping:
-output: bookdown::github_document2
+# output: bookdown::github_document2
 # output: bookdown::html_document2
 # #  for final pdf:
-# output:
-#   bookdown::pdf_document2:
-#     template: GISRUKPaperTemplate.tex
+output:
+  bookdown::pdf_document2:
+    template: GISRUKPaperTemplate.tex
 bibliography: references.bib
 title: "Assessing methods for generating route networks from origin-destionation data: jittering, routing, and visualisation"
 ---
@@ -335,11 +335,11 @@ It should also be noted that the OD data is from 2011, while the counter dataset
 These limitations help explain the poor counter-network results and, more importantly, suggest ways to gain further understanding of ways to improve network generation processes.
 Promising avenues of future research could include:
 
-1. Exploring the impact of other parameters in the OD to route network generation process, including:
-  1. The routing profile used, which can 'prefer' different route types, resulting in 'quiet' to 'fast' networks [@desjardins_correlates_2021]
-  1. Further disaggregation levels, including full disaggregation (one desire line and route per trip) and generation of 'centroid connectors' [@jafari_investigation_2015; @friedrich_methods_2009]
-  1. Testing different jittering strategies used to sample origin and destination points within zones, such as using open building datasets to generate start and end points [@lovelace_jittering_2022] 
-1. Repeating the tests outlined in this paper but with larger and richer input datasets
+- Exploring the impact of other parameters in the OD to route network generation process, including:
+    - The routing profile used, which can 'prefer' different route types, resulting in 'quiet' to 'fast' networks [@desjardins_correlates_2021]
+    - Further disaggregation levels, including full disaggregation (one desire line and route per trip) and generation of 'centroid connectors' [@jafari_investigation_2015; @friedrich_methods_2009]
+    - Testing different jittering strategies used to sample origin and destination points within zones, such as using open building datasets to generate start and end points [@lovelace_jittering_2022] 
+- Repeating the tests outlined in this paper but with larger and richer input datasets
 
 We believe that pursuing such lines of inquiry should be a priority for sustainable transport planning.
 New insights could lead to improved evidence on which to develop investment strategies, such as route networks presenting estimates of baseline levels, and potential uptake, of sustainable transport modes, improving on route network results derived from 'centroid-based' desire lines [e.g. @goodman_scenarios_2019; @lovelace_propensity_2017; @biba_new_2010].^[

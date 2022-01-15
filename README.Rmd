@@ -229,6 +229,52 @@ plot(sf::read_sf("output_max50.geojson")$geometry, add = TRUE)
 plot(zones$geometry, border = "grey")
 plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
 plot(sf::read_sf("output_max10.geojson")$geometry, add = TRUE)
+
+# Replicating in ggplot2 -- benefits in that can more easily
+# play with visual parameters add titles etc. than baseR.
+# Also can extend in various ways (using different line primitives etc.)
+library(sf)
+library(patchwork)
+# network = sf::read_sf("network.geojson")
+# plot(zones$geometry, border = "grey")
+# sel_net = sample(nrow(network), 1000)
+# plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
+# plot(desire_lines_top$geometry, add = TRUE)
+sel_net = sample(nrow(network), 1000)
+theme_set(theme_void())
+p1 <- ggplot() +
+  geom_sf(data=zones, size=.1, alpha=.3) +
+  geom_sf(data=network$geometry[sel_net], colour="#67000d", size=.1)+
+  geom_sf(data=desire_lines$geometry[sel_net], alpha=.2, size=.7)+
+  coord_sf(crs=st_crs(zones), datum=NA)+
+  ggtitle("title here")
+  
+#plot(zones$geometry, border = "grey")
+sel_net = sample(nrow(network), 1000)
+# plot(network$geometry[sel_net], col = "red", add = TRUE, lwd = 0.1)
+# plot(sf::read_sf("output_max10k.geojson")$geometry, add = TRUE)
+p2 <- ggplot() +
+  geom_sf(data=zones, size=.1, alpha=.3) +
+  geom_sf(data=network$geometry[sel_net], colour="#67000d", size=.1)+
+  geom_sf(data=read_sf("output_max10k.geojson"), alpha=.2, size=.7)+
+  coord_sf(crs=st_crs(zones), datum=NA)+
+  ggtitle("title here")
+
+p3 <- ggplot() +
+  geom_sf(data=zones, size=.1, alpha=.3) +
+  geom_sf(data=network$geometry[sel_net], colour="#67000d", size=.1)+
+  geom_sf(data=read_sf("output_max50k.geojson"), alpha=.2, size=.7)+
+  coord_sf(crs=st_crs(zones), datum=NA)+
+  ggtitle("title here")
+
+p3 <- ggplot() +
+  geom_sf(data=zones, size=.1, alpha=.3) +
+  geom_sf(data=network$geometry[sel_net], colour="#67000d", size=.1)+
+  geom_sf(data=read_sf("output_max10k.geojson"), alpha=.2, size=.7)+
+  coord_sf(crs=st_crs(zones), datum=NA)+
+  ggtitle("title here")
+
+plot <- (p1+p2)/(p3+p4)
 ```
 
 <!-- Todo: update the above figure with more variations and show resulting route networks below -->

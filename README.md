@@ -23,7 +23,7 @@ enumeration districts
 with 111^2 (12,321) rows and a number of columns depending on the number
 of trip types.[^2]
 
-Because of these easy-to-use characteristics, OD datasets have long been
+Because of their small size and simplicity, OD datasets have long been
 used to describe aggregate urban mobility patterns (Carey, Hendrickson,
 and Siddharthan 1981). Typically, OD datasets are represented
 *geographically* as straight ‘desire lines’ between zone centroids, with
@@ -32,37 +32,39 @@ zone, for convenience, simplicity and (historically) to reduce
 computational requirements. This approach, illustrated in Figure
 <a href="#fig:od1"><strong>??</strong></a> below, has formed the basis
 of many visualisations and research projects using OD data (e.g. Rae
-2009; Calabrese et al. 2011).
+2009; Calabrese et al. 2011). Connecting zones with straight lines in
+this way has advantages: it can provide a quick summary of the movement
+patterns between zones, particularly when attributes such as total
+number of trips and the percentage of trips made by a particular mode
+are represented by variable aesthetics such as line width and colour, as
+illustrated in Figure <a href="#fig:od1"><strong>??</strong></a>.
 
 <img src="overview_map1.png" title="Illustration of typicall representation of OD dataset, illustrating travel to work patterns in England. Source: author's [analysis](https://github.com/creds2/od-data) of open access data from the 2011 Census." alt="Illustration of typicall representation of OD dataset, illustrating travel to work patterns in England. Source: author's [analysis](https://github.com/creds2/od-data) of open access data from the 2011 Census." width="80%" />
-
-Connecting zones with straight lines in this way has advantages: it can
-provide a quick summary of the movement patterns between zones,
-particularly when attributes such as total number of trips and the
-percentage of trips made by a particular mode are represented by
-variable aesthetics such as line width and colour, as illustrated in
-Figure <a href="#fig:od1"><strong>??</strong></a>.
 
 However, the approach has limitations, including:
 
 1.  people do not travel in straight lines!
 2.  centroid-based desire lines obscure two-way flows (Tennekes and Chen
     2021)
-3.  incorrect concentration of travel around certain points
+3.  unrealistic concentration of travel around certain points
 
 One way to add richness and realism to OD data is to convert the
 geographic desire lines into routes on the network and then aggregate
 the associated data to the route segment level to create route network
 outputs (Morgan and Lovelace 2020). Route network generation from
 centroid-based desire lines addresses limitations 1 and 2 outlined
-above, but not 3. In this paper we explore the potential for different
-‘jittering’ and disaggregation approaches to address limitations 1 to 3.
-Unlike some previous methodological papers on OD data, we are not only
-concerned with the visualisation of the data. The aim is to not only
-create informative visualisations but also to generate accurate results,
-measured as a correlation between estimated flow on the network from the
-route network results and real world datasets, and valuable open access
-datasets for subsequent geographic analysis steps.
+above, but not 3. Recently proposed ‘jittering’ methods seek to overcome
+all three limitations inherent to the centroid-based converstion of OD
+datasets to geographic desire lines (Lovelace, Félix, and Carlino 2022).
+
+<!-- In this paper we explore the potential for jittering . -->
+<!-- We are concerned with more than the visualisation of the data. -->
+
+The aim of this paper is to quantify, for the first time to the best of
+our knowledge, the impact of jittering — and different input parameters
+used in the jittering process — on the quality of route networks derived
+from OD data.
+<!-- , by  estimated flow  network from the route network results and real world datasets, and valuable open access datasets for subsequent geographic analysis steps. -->
 
 <!-- Todo: add figure showing this? -->
 

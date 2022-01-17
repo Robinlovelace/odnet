@@ -2,11 +2,11 @@
 # # for rapid prototyping:
 # output: bookdown::github_document2
 # output: bookdown::html_document2
-output: bookdown::word_document2
+# output: bookdown::word_document2
 # #  for final pdf:
-# output:
-#   bookdown::pdf_document2:
-#     template: GISRUKPaperTemplate.tex
+output:
+  bookdown::pdf_document2:
+    template: GISRUKPaperTemplate.tex
 bibliography: references.bib
 title: "Assessing methods for generating route networks from origin-destionation data: jittering, routing, and visualisation"
 ---

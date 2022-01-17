@@ -244,7 +244,7 @@ tm_output1 = tm_shape(zones, bbox = tmaptools::bb(zones, ext = 0.8)) +
   tm_shape(network) +
   tm_lines(col = "red", lwd = 0.2) +
   tm_shape(desire_lines_joined) +
-  tm_lines(lwd = "bicycle", title.lwd = "Number of trips", lwd.legend = c(10, 50), scale = 2) +
+  tm_lines(lwd = "bicycle", title.lwd = "N. trips/day", lwd.legend = c(10, 50), scale = 2) +
   tm_facets(by = "type", free.coords = FALSE) +
   tm_layout(legend.outside = FALSE)
 tm_output1
@@ -315,7 +315,7 @@ rnet_df = rnet_df %>%
 # central_edinburgh = stplanr::geo_code("edinburgh")
 # [1] -3.188375 55.953346
 tm_shape(rnet_df, bbox = tmaptools::bb(zones, ext = 0.4, cx = -3.188375, cy = 55.953346)) +
-  tm_lines(lwd = "bicycle", scale = 4, lwd.legend = c(100, 500)) +
+  tm_lines(lwd = "bicycle", title.lwd = "N. trips/day", scale = 4, lwd.legend = c(100, 500)) +
   tm_facets("type_cor") +
   tm_layout(legend.outside = FALSE)
 ```

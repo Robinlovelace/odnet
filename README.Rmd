@@ -84,7 +84,6 @@ The aim of this paper is to quantify, for the first time to the best of our know
 
 The geographic input datasets on which the analysis presented in this paper build are cleaned versions of open datasets representing the transport system in Edinburgh (see Figure \@ref(fig:overview)):
 
-- Open access cycle counter data, stored in [`cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 - Open zones data, stored in [`iz_zones11_ed`](https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson)
 - Open road network data from OSM, stored as [`road_network_ed.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 
@@ -370,5 +369,8 @@ an ecosystem of interoperable digital twins to study urban transportation and
 pandemics. He's the creator of the [A/B Street](https://abstreet.org)
 transportation planning platform, and a proponent of open source code and the
 Rust programming language.
+
+Roger is an Associate Professor of Visual Data Science in School of Geography, University of Leeds. His research develops, applies and evaluates visualization techniques in the analysis of large geospatial datasets. A current focus is on the use of visual techniques for supporting inference in geographical analysis.
+
 
 # References

@@ -1,15 +1,16 @@
 ---
 # # for rapid prototyping:
-# output: bookdown::github_document2
+output: bookdown::github_document2
 # output: bookdown::html_document2
 # output: bookdown::word_document2
 # #  for final pdf:
-output:
-  bookdown::pdf_document2:
-    template: GISRUKPaperTemplate.tex
+# output:
+#   bookdown::pdf_document2:
+#     template: GISRUKPaperTemplate.tex
 bibliography: references.bib
 title: "Assessing methods for generating route networks from origin-destionation data: jittering, routing, and visualisation"
 ---
+
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -28,7 +29,7 @@ piggyback::pb_download_url("odnet.pdf")
 
 
 ```{r, include=FALSE}
-rbbt::bbt_update_bib("README.Rmd", path_bib = "references.bib")
+# rbbt::bbt_update_bib("README.Rmd", path_bib = "references.bib")
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -164,19 +165,23 @@ cargo install --git https://github.com/dabreegster/odjitter
 Generate jittered OD pairs with a `max-per-od` value of 50 as follows:
 
 ```bash
-odjitter --od-csv-path od_iz_ed.csv \
+odjitter jitter --od-csv-path od_iz_ed.csv \
   --zones-path iz_zones11_ed.geojson \
-  --subpoints-path road_network_ed.geojson \
-  --max-per-od 50 --output-path output_max50.geojson
+  --subpoints-origins-path road_network_ed.geojson \
+  --subpoints-destinations-path road_network_ed.geojson \
+  --disaggregation-threshold 50 \
+  --output-path output_max50.geojson
 ```
 
 Try running it with a different `max-per-od` value (10 in the command below):
 
 ```bash
-odjitter --od-csv-path od_iz_ed.csv \
+odjitter jitter --od-csv-path od_iz_ed.csv \
   --zones-path iz_zones11_ed.geojson \
-  --subpoints-path road_network_ed.geojson \
-  --max-per-od 10 --output-path output_max50.geojson
+  --subpoints-origins-path road_network_ed.geojson \
+  --subpoints-destinations-path road_network_ed.geojson \
+  --disaggregation-threshold 10 \
+  --output-path output_max10.geojson
 ```
 
 ```{r}
@@ -191,22 +196,6 @@ desire_lines_top = desire_lines %>%
 ```
 
 <!-- Generate results for top 500, run once: -->
-
-```{bash, eval=FALSE}
-odjitter --od-csv-path od_top.csv \
-  --zones-path iz_zones11_ed.geojson \
-  --subpoints-path road_network_ed.geojson \
-  --max-per-od 1000 --output-path output_max10k.geojson
-odjitter --od-csv-path od_top.csv \
-  --zones-path iz_zones11_ed.geojson \
-  --subpoints-path road_network_ed.geojson \
-  --max-per-od 50 --output-path output_max50.geojson
-odjitter --od-csv-path od_top.csv \
-  --zones-path iz_zones11_ed.geojson \
-  --subpoints-path road_network_ed.geojson \
-  --max-per-od 10 --output-path output_max10.geojson
-```
-
 
 # Findings
 

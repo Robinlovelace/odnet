@@ -75,8 +75,6 @@ paper build are cleaned versions of open datasets representing the
 transport system in Edinburgh (see Figure
 <a href="#fig:overview">2.1</a>):
 
--   Open access cycle counter data, stored in
-    [`cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson`](https://github.com/Robinlovelace/odnet/releases/download/0/cycle_counts_edinburgh_summary_2020-03-02-2022-01-05.geojson)
 -   Open zones data, stored in
     [`iz_zones11_ed`](https://github.com/ITSLeeds/od/releases/download/v0.3.1/iz_zones11_ed.geojson)
 -   Open road network data from OSM, stored as
@@ -144,20 +142,24 @@ cargo install --git https://github.com/dabreegster/odjitter
 Generate jittered OD pairs with a `max-per-od` value of 50 as follows:
 
 ``` bash
-odjitter --od-csv-path od_iz_ed.csv \
+odjitter jitter --od-csv-path od_iz_ed.csv \
   --zones-path iz_zones11_ed.geojson \
-  --subpoints-path road_network_ed.geojson \
-  --max-per-od 50 --output-path output_max50.geojson
+  --subpoints-origins-path road_network_ed.geojson \
+  --subpoints-destinations-path road_network_ed.geojson \
+  --disaggregation-threshold 50 \
+  --output-path output_max50.geojson
 ```
 
 Try running it with a different `max-per-od` value (10 in the command
 below):
 
 ``` bash
-odjitter --od-csv-path od_iz_ed.csv \
+odjitter jitter --od-csv-path od_iz_ed.csv \
   --zones-path iz_zones11_ed.geojson \
-  --subpoints-path road_network_ed.geojson \
-  --max-per-od 10 --output-path output_max50.geojson
+  --subpoints-origins-path road_network_ed.geojson \
+  --subpoints-destinations-path road_network_ed.geojson \
+  --disaggregation-threshold 10 \
+  --output-path output_max10.geojson
 ```
 
 <!-- Generate results for top 500, run once: -->
@@ -241,18 +243,19 @@ results and, more importantly, suggest ways to gain further
 understanding of ways to improve network generation processes. Promising
 avenues of future research could include:
 
-1.  Exploring the impact of other parameters in the OD to route network
+-   Exploring the impact of other parameters in the OD to route network
     generation process, including:
-2.  The routing profile used, which can ‘prefer’ different route types,
-    resulting in ‘quiet’ to ‘fast’ networks (Desjardins et al. 2021)
-3.  Further disaggregation levels, including full disaggregation (one
-    desire line and route per trip) and generation of ‘centroid
-    connectors’ (Jafari et al. 2015; Friedrich and Galster 2009)
-4.  Testing different jittering strategies used to sample origin and
-    destination points within zones, such as using open building
-    datasets to generate start and end points (Lovelace, Félix, and
-    Carlino 2022)
-5.  Repeating the tests outlined in this paper but with larger and
+    -   The routing profile used, which can ‘prefer’ different route
+        types, resulting in ‘quiet’ to ‘fast’ networks (Desjardins et
+        al. 2021)
+    -   Further disaggregation levels, including full disaggregation
+        (one desire line and route per trip) and generation of ‘centroid
+        connectors’ (Jafari et al. 2015; Friedrich and Galster 2009)
+    -   Testing different jittering strategies used to sample origin and
+        destination points within zones, such as using open building
+        datasets to generate start and end points (Lovelace, Félix, and
+        Carlino 2022)
+-   Repeating the tests outlined in this paper but with larger and
     richer input datasets
 
 We believe that pursuing such lines of inquiry should be a priority for
@@ -300,6 +303,12 @@ creating an ecosystem of interoperable digital twins to study urban
 transportation and pandemics. He’s the creator of the [A/B
 Street](https://abstreet.org) transportation planning platform, and a
 proponent of open source code and the Rust programming language.
+
+Roger is an Associate Professor of Visual Data Science in School of
+Geography, University of Leeds. His research develops, applies and
+evaluates visualization techniques in the analysis of large geospatial
+datasets. A current focus is on the use of visual techniques for
+supporting inference in geographical analysis.
 
 # 7 References
 
@@ -419,7 +428,7 @@ Origin-Destination Data Visualization.” *Computer Graphics Forum* 40
 
 [^1]: <https://www.ons.gov.uk/census/2011census/2011censusdata/originanddestinationdata>
 
-[^2]:  In practice, not all combinations of OD pairs have trips between
+[^2]: In practice, not all combinations of OD pairs have trips between
     them, so the square of the number of zones is an upper limit. The
     number of rows of data in the input OD dataset we use in this paper
     has 10,394 rows, 16% fewer than the maximum that could be
@@ -430,7 +439,7 @@ Origin-Destination Data Visualization.” *Computer Graphics Forum* 40
     storing information on travel behaviour compared with alternatives
     such as large GPS datasets.
 
-[^3]:  See the Technical Note produced by consultancy PJA for
+[^3]: See the Technical Note produced by consultancy PJA for
     Staffordshire’s Local Cycling and Walking Infrastructure Plan for a
     good example o the use of centroid-based desire lines for routing in
     practice:
